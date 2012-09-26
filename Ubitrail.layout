@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="release" />
+	<File name="Makefile" open="1" top="0" tabpos="19">
+		<Cursor position="1423" topLine="13" />
+	</File>
+	<File name="TODOlist" open="1" top="1" tabpos="33">
+		<Cursor position="1498" topLine="13" />
+	</File>
+	<File name="headers/Application.hpp" open="1" top="0" tabpos="26">
+		<Cursor position="378" topLine="0" />
+	</File>
+	<File name="headers/Area.hpp" open="1" top="0" tabpos="10">
+		<Cursor position="31" topLine="0" />
+	</File>
+	<File name="headers/AreaPreviewer.hpp" open="1" top="0" tabpos="40">
+		<Cursor position="695" topLine="13" />
+	</File>
+	<File name="headers/ControlPanel.hpp" open="1" top="0" tabpos="29">
+		<Cursor position="379" topLine="5" />
+	</File>
+	<File name="headers/Decorator.hpp" open="1" top="0" tabpos="23">
+		<Cursor position="415" topLine="0" />
+	</File>
+	<File name="headers/DrawingArea.hpp" open="1" top="0" tabpos="25">
+		<Cursor position="535" topLine="0" />
+	</File>
+	<File name="headers/FeatureClassifier.hpp" open="1" top="0" tabpos="13">
+		<Cursor position="535" topLine="0" />
+	</File>
+	<File name="headers/ForegroundExtractor.hpp" open="1" top="0" tabpos="12">
+		<Cursor position="1060" topLine="1" />
+	</File>
+	<File name="headers/MotionSensor.hpp" open="0" top="0" tabpos="36">
+		<Cursor position="256" topLine="0" />
+	</File>
+	<File name="headers/OptionParser.hpp" open="1" top="0" tabpos="30">
+		<Cursor position="299" topLine="0" />
+	</File>
+	<File name="headers/PageAreaMaker.hpp" open="1" top="0" tabpos="38">
+		<Cursor position="1027" topLine="25" />
+	</File>
+	<File name="headers/PageOutput.hpp" open="0" top="0" tabpos="9">
+		<Cursor position="45" topLine="0" />
+	</File>
+	<File name="headers/PageProcessPars.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="785" topLine="7" />
+	</File>
+	<File name="headers/PageVideoInput.hpp" open="1" top="0" tabpos="44">
+		<Cursor position="599" topLine="0" />
+	</File>
+	<File name="headers/Processor.hpp" open="1" top="0" tabpos="11">
+		<Cursor position="1008" topLine="51" />
+	</File>
+	<File name="headers/ROIMaker.hpp" open="1" top="0" tabpos="35">
+		<Cursor position="352" topLine="0" />
+	</File>
+	<File name="headers/ResultWriter.hpp" open="1" top="0" tabpos="14">
+		<Cursor position="610" topLine="0" />
+	</File>
+	<File name="headers/SettingAssistant.hpp" open="1" top="0" tabpos="42">
+		<Cursor position="678" topLine="9" />
+	</File>
+	<File name="headers/Tracker.hpp" open="1" top="0" tabpos="5">
+		<Cursor position="77" topLine="0" />
+	</File>
+	<File name="headers/VideoGrabber.hpp" open="1" top="0" tabpos="18">
+		<Cursor position="428" topLine="6" />
+	</File>
+	<File name="headers/VideoWriter.hpp" open="1" top="0" tabpos="34">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="headers/defines.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="442" topLine="24" />
+	</File>
+	<File name="headers/guiText.hpp" open="1" top="0" tabpos="45">
+		<Cursor position="1147" topLine="0" />
+	</File>
+	<File name="headers/optionStructure.hpp" open="1" top="0" tabpos="32">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/Application.cpp" open="1" top="0" tabpos="24">
+		<Cursor position="1086" topLine="32" />
+	</File>
+	<File name="src/Area.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="1256" topLine="24" />
+	</File>
+	<File name="src/AreaPreviewer.cpp" open="1" top="0" tabpos="39">
+		<Cursor position="506" topLine="7" />
+	</File>
+	<File name="src/ControlPanel.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="2723" topLine="75" />
+	</File>
+	<File name="src/Decorator.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="1072" topLine="22" />
+	</File>
+	<File name="src/DrawingArea.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="811" topLine="24" />
+	</File>
+	<File name="src/FeatureClassifier.cpp" open="1" top="0" tabpos="37">
+		<Cursor position="2650" topLine="84" />
+	</File>
+	<File name="src/ForegroundExtractor.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="2306" topLine="50" />
+	</File>
+	<File name="src/MotionSensor.cpp" open="1" top="0" tabpos="22">
+		<Cursor position="408" topLine="3" />
+	</File>
+	<File name="src/OptionParser.cpp" open="1" top="0" tabpos="31">
+		<Cursor position="530" topLine="9" />
+	</File>
+	<File name="src/PageAreaMaker.cpp" open="1" top="0" tabpos="36">
+		<Cursor position="1484" topLine="21" />
+	</File>
+	<File name="src/PageOutput.cpp" open="1" top="0" tabpos="27">
+		<Cursor position="307" topLine="6" />
+	</File>
+	<File name="src/PageProcessPars.cpp" open="1" top="0" tabpos="43">
+		<Cursor position="431" topLine="0" />
+	</File>
+	<File name="src/PageVideoInput.cpp" open="1" top="0" tabpos="28">
+		<Cursor position="591" topLine="8" />
+	</File>
+	<File name="src/Processor.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1481" topLine="42" />
+	</File>
+	<File name="src/ROIMaker.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="1004" topLine="0" />
+	</File>
+	<File name="src/ResultWriter.cpp" open="1" top="0" tabpos="15">
+		<Cursor position="4021" topLine="118" />
+	</File>
+	<File name="src/SettingAssistant.cpp" open="1" top="0" tabpos="41">
+		<Cursor position="33" topLine="17" />
+	</File>
+	<File name="src/Tracker.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="55" topLine="0" />
+	</File>
+	<File name="src/VideoGrabber.cpp" open="1" top="0" tabpos="17">
+		<Cursor position="424" topLine="0" />
+	</File>
+	<File name="src/VideoWriter.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1626" topLine="46" />
+	</File>
+</CodeBlocks_layout_file>

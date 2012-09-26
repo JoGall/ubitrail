@@ -1,0 +1,13 @@
+Package: rubitrail
+Type: Package
+Title: rubitrail, todo
+Version: 0.1
+Date: 2012-09-24
+Author: Quentin Geissmann
+Maintainer: Quentin Geissmann <qgeissmann@gmail.com>
+Description: todo
+License: GPL>=3.0
+LazyLoad: yes
+Collate:
+    'rubitrail.R'
+    'Input.R'
