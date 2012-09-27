@@ -27,6 +27,6 @@ ubitrail
 *.pdf
 *.avi
 *.out
-
+*~
 #data file
 data/
