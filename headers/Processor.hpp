@@ -14,7 +14,7 @@
 #include <glibmm/threads.h>
 #endif
 /**
- * The class that is responsible of the processing.
+ * The class that is responsible for the processing.
  * The class starts from a set of predefined options and a capture device.
  * When constructed, a Processor object make instances of Tracker class.
  * The member function run() can then be called once to perform the whole analysis.
@@ -123,6 +123,7 @@ class Processor
         void updateXYTrainedTerrit();
 #endif
     private:
+        //a comment here
         Options m_options;
         VideoGrabber m_videoGrab;
         std::vector< Tracker > trackers;
