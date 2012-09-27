@@ -4,7 +4,7 @@
 	<File name="Makefile" open="1" top="0" tabpos="19">
 		<Cursor position="1423" topLine="13" />
 	</File>
-	<File name="TODOlist" open="1" top="1" tabpos="33">
+	<File name="TODOlist" open="1" top="0" tabpos="33">
 		<Cursor position="1498" topLine="13" />
 	</File>
 	<File name="headers/Application.hpp" open="1" top="0" tabpos="26">
@@ -50,7 +50,7 @@
 		<Cursor position="599" topLine="0" />
 	</File>
 	<File name="headers/Processor.hpp" open="1" top="0" tabpos="11">
-		<Cursor position="1008" topLine="51" />
+		<Cursor position="353" topLine="13" />
 	</File>
 	<File name="headers/ROIMaker.hpp" open="1" top="0" tabpos="35">
 		<Cursor position="352" topLine="0" />
@@ -79,8 +79,8 @@
 	<File name="headers/optionStructure.hpp" open="1" top="0" tabpos="32">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/Application.cpp" open="1" top="0" tabpos="24">
-		<Cursor position="1086" topLine="32" />
+	<File name="src/Application.cpp" open="1" top="1" tabpos="24">
+		<Cursor position="1086" topLine="0" />
 	</File>
 	<File name="src/Area.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="1256" topLine="24" />
@@ -104,7 +104,7 @@
 		<Cursor position="2306" topLine="50" />
 	</File>
 	<File name="src/MotionSensor.cpp" open="1" top="0" tabpos="22">
-		<Cursor position="408" topLine="3" />
+		<Cursor position="408" topLine="0" />
 	</File>
 	<File name="src/OptionParser.cpp" open="1" top="0" tabpos="31">
 		<Cursor position="530" topLine="9" />
