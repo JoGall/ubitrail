@@ -6,8 +6,6 @@ WEBSITE_URI := '"http://ubitrail.sourceforge.net"'
 # The version
 VERSION := 1
 
-#CONNARD
-
 # The minimal version for OpenCV
 MIN_OCV_VERSION := 2.3
 
