@@ -14,7 +14,7 @@
 		<Cursor position="31" topLine="0" />
 	</File>
 	<File name="headers/AreaPreviewer.hpp" open="1" top="0" tabpos="40">
-		<Cursor position="695" topLine="13" />
+		<Cursor position="695" topLine="8" />
 	</File>
 	<File name="headers/ControlPanel.hpp" open="1" top="0" tabpos="29">
 		<Cursor position="379" topLine="5" />
@@ -49,8 +49,8 @@
 	<File name="headers/PageVideoInput.hpp" open="1" top="0" tabpos="44">
 		<Cursor position="599" topLine="0" />
 	</File>
-	<File name="headers/Processor.hpp" open="1" top="0" tabpos="11">
-		<Cursor position="353" topLine="13" />
+	<File name="headers/Processor.hpp" open="1" top="1" tabpos="11">
+		<Cursor position="4356" topLine="100" />
 	</File>
 	<File name="headers/ROIMaker.hpp" open="1" top="0" tabpos="35">
 		<Cursor position="352" topLine="0" />
@@ -59,19 +59,19 @@
 		<Cursor position="610" topLine="0" />
 	</File>
 	<File name="headers/SettingAssistant.hpp" open="1" top="0" tabpos="42">
-		<Cursor position="678" topLine="9" />
+		<Cursor position="678" topLine="6" />
 	</File>
 	<File name="headers/Tracker.hpp" open="1" top="0" tabpos="5">
 		<Cursor position="77" topLine="0" />
 	</File>
 	<File name="headers/VideoGrabber.hpp" open="1" top="0" tabpos="18">
-		<Cursor position="428" topLine="6" />
+		<Cursor position="428" topLine="4" />
 	</File>
 	<File name="headers/VideoWriter.hpp" open="1" top="0" tabpos="34">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="headers/defines.hpp" open="1" top="0" tabpos="6">
-		<Cursor position="442" topLine="24" />
+		<Cursor position="442" topLine="19" />
 	</File>
 	<File name="headers/guiText.hpp" open="1" top="0" tabpos="45">
 		<Cursor position="1147" topLine="0" />
@@ -79,7 +79,7 @@
 	<File name="headers/optionStructure.hpp" open="1" top="0" tabpos="32">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/Application.cpp" open="1" top="1" tabpos="24">
+	<File name="src/Application.cpp" open="1" top="0" tabpos="24">
 		<Cursor position="1086" topLine="0" />
 	</File>
 	<File name="src/Area.cpp" open="1" top="0" tabpos="9">
@@ -131,7 +131,7 @@
 		<Cursor position="4021" topLine="118" />
 	</File>
 	<File name="src/SettingAssistant.cpp" open="1" top="0" tabpos="41">
-		<Cursor position="33" topLine="17" />
+		<Cursor position="33" topLine="12" />
 	</File>
 	<File name="src/Tracker.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="55" topLine="0" />

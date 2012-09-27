@@ -31,3 +31,8 @@ ubitrail
 #data file
 data/
 html/
+latex/
+*.cbp
+*.layout
+*.layout.cbTemp
+

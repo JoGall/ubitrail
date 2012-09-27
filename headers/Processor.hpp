@@ -123,6 +123,7 @@ class Processor
         void updateXYTrainedTerrit();
 #endif
     private:
+        //a comment here
         Options m_options;
         VideoGrabber m_videoGrab;
         std::vector< Tracker > trackers;
