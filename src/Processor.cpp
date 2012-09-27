@@ -31,6 +31,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
     m_decorator = Decorator(&trackers,bg.size());
 
     m_decorator.newFrame(deco);
+
     if(preview != NULL){
         m_decorator.getDecoratedFrame(deco);
         deco.copyTo(*preview);
@@ -78,7 +79,6 @@ void Processor::track(){
             {
                 if(!first){
                     m_videoGrab.getFrame(frame,&time);
-
                 }
                 if(!end){
                     m_decorator.newFrame(frame);

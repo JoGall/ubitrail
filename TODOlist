@@ -10,7 +10,7 @@ PROCESSING:
     @++!+++ Save mask
     @+!+ threading : calculate numb of thread using available and optimal
     @++!++ optimise decorator
-
+    @++!++ check makebg so that it control if frames a readable.
 # => @+++!+++ Understand why some likelyhood values are positive
 # => @+++!+++ Make a result file header (time/date/ input file,areas...........)
 # => @+++!+ Mass center not center of bounding box !
