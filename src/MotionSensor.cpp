@@ -4,8 +4,8 @@ MotionSensor::MotionSensor(){
 }
 
 MotionSensor::MotionSensor(int sensitivity,cv::Mat& mask):
-mog(MOTION_SENSOR_HISTORY, MOTION_SENSOR_THR, false),
-trainingRate(MOTION_SENSOR_TRAINING_MIN),
+//mog(MOTION_SENSOR_HISTORY, MOTION_SENSOR_THR, false),
+//trainingRate(MOTION_SENSOR_TRAINING_MIN),
 m_sensitivity(sensitivity),
 m_mask(mask)
 {
@@ -16,7 +16,7 @@ MotionSensor::~MotionSensor()
 {
     //dtor
 }
-double MotionSensor::run(cv::Mat& img, cv::Mat& out){
+int MotionSensor::run(cv::Mat& img, cv::Mat& out){
 //    cv::Mat out;
 
     if(accum.empty())
@@ -32,7 +32,8 @@ double MotionSensor::run(cv::Mat& img, cv::Mat& out){
 
 
     cv::threshold(out,out,m_sensitivity,255,cv::THRESH_BINARY);
-    //todo;
+
+    //TODO remove ?
     cv::dilate(out,out,cv::Mat(),cv::Point(-1,-1),1);
     cv::erode(out,out,cv::Mat(),cv::Point(-1,-1),2);
 

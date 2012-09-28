@@ -16,10 +16,10 @@ ForegroundExtractor::~ForegroundExtractor()
 {
     //dtor
 }
-int ForegroundExtractor::run(cv::Mat& img, cv::Mat& mot, double motionQ,bool wasAmbig,std::vector<std::vector<cv::Point> >& validContours){
+int ForegroundExtractor::run(cv::Mat& img, cv::Mat& mot, int motionQ,bool wasAmbig,std::vector<std::vector<cv::Point> >& validContours){
     cv::Mat seeds;
     cv::Mat out;
-    if(motionQ > 0){ //to rational
+    if(motionQ > 0){ //todo rational
         this->updateTrainingRate();
         //
         double modifier;

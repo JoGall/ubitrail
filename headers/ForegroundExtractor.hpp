@@ -13,7 +13,7 @@ class ForegroundExtractor
         ForegroundExtractor();
         ForegroundExtractor(int roundToTrain);
         virtual ~ForegroundExtractor();
-        int run(cv::Mat& img,cv::Mat& mot, double motionQ,bool wasAmbig,std::vector<std::vector<cv::Point> >& validContours);
+        int run(cv::Mat& img,cv::Mat& mot, int motionQ,bool wasAmbig,std::vector<std::vector<cv::Point> >& validContours);
 
         bool isTrained(){
             if(roundTrained < m_roundToTrain)

@@ -14,7 +14,7 @@
 #include <glibmm/threads.h>
 #endif
 /**
- * The class that is responsible for the processing.
+ * The class responsible for the processing.
  * The class starts from a set of predefined options and a capture device.
  * When constructed, a Processor object make instances of Tracker class.
  * The member function run() can then be called once to perform the whole analysis.
@@ -45,9 +45,9 @@ class Processor
         * A public member function performing the tracking from A to Z.
         * It loops through the video input:
         * 1. Decodes a frame
-        * 2. Sends the frame to each tracker
-        * 3. Buffers results from each tracker
-        * 4. Write the results for all trackers
+        * 2. Sends the frame to each Tracker
+        * 3. Buffers results from each Tracker
+        * 4. Write the results for all Trackers
         * 5. Sends the frame to the Decorator
         * 6. Gets the decorated frame
         * 7. Append the decorated frame to optional videos
@@ -114,7 +114,7 @@ class Processor
         * 0,1,2 \n 3,4,5 \n 6,7,8 \n
         * This is done by only using relative coordinate and dimentions of the areas
         * @param newROIs, an input vector of ROIs.
-        * @return a vector of strings the same size than newROIs containing labels for each newROIs.
+        * @return A vector of strings the same size than newROIs containing labels for each newROIs.
         */
         std::vector<std::string> makeLabels(std::vector< cv::Rect > newROIs);
 
@@ -123,7 +123,6 @@ class Processor
         void updateXYTrainedTerrit();
 #endif
     private:
-        //a comment here
         Options m_options;
         VideoGrabber m_videoGrab;
         std::vector< Tracker > trackers;

@@ -31,7 +31,7 @@ class FeatureClassifier
         void makeMiniImg(std::vector<cv::Point>& contour,  cv::Mat& miniIMG, cv::Mat& img);
         void makeFeatures(std::vector<double>&,std::vector<cv::Point>& contour,  cv::Mat& miniIMG);
         cv::Point2f updatePosition (cv::Point2f center);
-        float calcLikelyhood(std::vector<double>& vect);
+        float calcLikelihood(std::vector<double>& vect);
         void updateMeanSD(std::vector<double>& vect);
     private:
         cv::Mat featuresMeansSds;

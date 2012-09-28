@@ -39,7 +39,7 @@ void ResultWriter::writeTracker(int i,long time){
                                       (*m_trackers)[i].getX(),
                                       (*m_trackers)[i].getY(),
                                       time,
-                                      (*m_trackers)[i].getLikelyhood(),i);
+                                      (*m_trackers)[i].getLikelihood(),i);
     }
 
 }

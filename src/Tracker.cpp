@@ -7,6 +7,7 @@
 Tracker::Tracker(){
 
 }
+
 Tracker::Tracker(Area area,const std::string  label, Options& options):
 m_area(area),
 m_label(label),
@@ -26,7 +27,7 @@ Tracker::~Tracker()
 }
 
 
-void Tracker::nextFrame(cv::Mat wholeFrame, double time){
+void Tracker::nextFrame(const cv::Mat& wholeFrame, double time){
         isPositionValid = false;
         cv::Mat img,preprocedImg,motionFrame;
 
@@ -39,7 +40,7 @@ void Tracker::nextFrame(cv::Mat wholeFrame, double time){
             cv::accumulateWeighted(preprocedImg,accum,TRACKER_ACCU_WEIGHT,m_area.getTerrit());
 
         accum.convertTo(preprocedImg,CV_8U);
-        double motionQ = motionSensor.run(preprocedImg,motionFrame);
+        int motionQ = motionSensor.run(preprocedImg,motionFrame);
         std::vector<std::vector<cv::Point> > contours(0);
         foregroundExtractor.run(preprocedImg,motionFrame,motionQ,wasAmbiguous,contours);
         if(contours.size() > 1 ){
@@ -58,6 +59,5 @@ void Tracker::nextFrame(cv::Mat wholeFrame, double time){
                 isPositionValid = true;
             }
         }
-
 }
 

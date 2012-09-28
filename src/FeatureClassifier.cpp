@@ -24,7 +24,7 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
     if(contours.size() > 0){
         cv::Mat miniImg;
         std::vector<std::vector< double> > featureArrays(contours.size());
-        std::vector< double> likelyhoods(contours.size());
+        std::vector< double> likelihoods(contours.size());
 
         // We calculate features of all objects
         for(unsigned int i = 0; i < contours.size(); i++){
@@ -32,7 +32,7 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
             makeMiniImg(contours[i],miniImg,img);
             makeFeatures(featureArrays[i],contours[i],miniImg);
             if(roundTrained > 1){
-                likelyhoods[i] = this->calcLikelyhood(featureArrays[i]);
+                likelihoods[i] = this->calcLikelihood(featureArrays[i]);
             }
         }
 
@@ -41,7 +41,7 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
 
         if(contours.size() == 1 ){
             this->updateMeanSD(featureArrays[0]);
-            bestLikelihood = likelyhoods[0];
+            bestLikelihood = likelihoods[0];
             if(roundTrained < m_roundToTrain){
                 roundTrained++;
             }
@@ -49,9 +49,9 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
 
         else{
             for(unsigned int i = 0; i < contours.size(); i++){
-                if(likelyhoods[i] > bestLikelihood){
+                if(likelihoods[i] > bestLikelihood){
                     bestIdx = i;
-                    bestLikelihood = likelyhoods[bestIdx];
+                    bestLikelihood = likelihoods[bestIdx];
                 }
             }
         }
@@ -141,7 +141,7 @@ cv::Point2f FeatureClassifier::updatePosition (cv::Point2f center){
 
 }
 
-float FeatureClassifier::calcLikelyhood(std::vector<double>& vect){
+float FeatureClassifier::calcLikelihood(std::vector<double>& vect){
 
 
     cv::Mat tmp(vect);

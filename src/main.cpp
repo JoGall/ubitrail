@@ -16,7 +16,7 @@ int main(int argc, char **argv){
     /* 1) We make the otion parser */
     OptionParser optPars;
     Options* opts;
-    VideoGrabber*   ;
+    VideoGrabber* videoGrab;
     Processor* pro;
     optPars = OptionParser(argc,argv);
     bool hasNewPro(true);
