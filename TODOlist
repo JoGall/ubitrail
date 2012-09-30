@@ -4,13 +4,14 @@
 PROCESSING:
 
     @++! Find a way to write videos with dynamic framerate
-    @+++!+ protection against overlaping area
-    @++!+++ Area from file (png)
-    @++!+++ Make a constructor that can take files as areas
-    @++!+++ Save mask
+    @++!++ Save mask
     @+!+ threading : calculate numb of thread using available and optimal
     @++!++ optimise decorator
     @++!++ check makebg so that it control if frames a readable.
+
+# => @+++!+ protection against overlaping area
+# => @++!+++ Area from file (png)
+# => @++!+++ Make a constructor that can take files as areas
 # => @+++!+++ Understand why some likelihood values are positive
 # => @+++!+++ Make a result file header (time/date/ input file,areas...........)
 # => @+++!+ Mass center not center of bounding box !
@@ -20,23 +21,25 @@ PROCESSING:
 # => @++!+++  Exclude bigcontours
 
 BENCHMARCK:
-    @++! interpolation type by display
+    @+! interpolation type by display
     @++! GUI vs CL
     @++! see what hapend if the number of thread is down and number of area high
 
 
 ASSISTANT:
-    @+++! Quiting option
-    @+++!+++ Previewer
+
     @! startProcessing = better button
     @+! estethic buttons
     @+! images
     @+! icon
     @+! tooltips
 
+ # => @+++! Quiting option
+ # => @+++!+++ Previewer
 
 
 DISPLAY:
+    @++!++ About ubitrail
     @++! click on display -> area
     @+! estethic buttons
     @+! images
@@ -51,14 +54,14 @@ DISPLAY:
 
 MAKEFILE:
     @++ target for nogui
-    @+++!+ make install
+# => @+++!+ make install
 
 General:
 
     @+++!+ Document the code
     @+++!+ HelpButton
     @+++!+ Version
-        @++!++ErrorPrinter(VIDEO_WONT_INIT);
+    @++!++ErrorPrinter(VIDEO_WONT_INIT);
 
 # => @+++! make a clean finishing mechanism
 # => @++!+ make gui start without assistant

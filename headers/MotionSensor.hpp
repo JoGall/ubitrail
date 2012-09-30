@@ -27,9 +27,9 @@ class MotionSensor
 
         /**
          * A public member function updating the dynamic background and retruning the difference to the current frame.
-         * @param img an imput frame
+         * @param img an input frame.
          * @param out a binary matrix where pixels values are non-zero where motion was detected.
-         * @return 1000 times the proportion of non-zero pixels in out ;
+         * @return 1000 times the proportion of non-zero pixels in out.
          *
          * It performs as follow:
          * 1. Computes a runing weighted average of the current frame.

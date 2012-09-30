@@ -28,6 +28,7 @@ class PageAreaMaker: public Gtk::VBox
         void on_mode_changed();
         void updateOpts();
         void makePreview();
+        void on_loadFile_clicked();
     private:
         Gtk::Label m_description;
         Glib::ustring m_title;
@@ -40,7 +41,7 @@ class PageAreaMaker: public Gtk::VBox
         Glib::ustring m_modeLabelsText[N_MODES];
         Gtk::VBox m_modeVboxes[N_MODES], m_vb_dummy_mode;
         bool m_isAvailable[N_MODES];
-        Gtk::Button m_generatePreview;
+        Gtk::Button m_generatePreview, m_generatePreview2;
 
         Gtk::Adjustment m_adju_nDish, m_adju_nLine;
         Gtk::SpinButton m_spinButt_nDish, m_spinButt_nLine;
@@ -52,6 +53,8 @@ class PageAreaMaker: public Gtk::VBox
         VideoGrabber* m_videoGrab;
 //        Glib::RefPtr<Gdk::Window> preview
         AreaPreviewer m_areaPreview;
+        std::string maskFileName;
+        Gtk::Button m_butt_maskPicker;
 //        Glib::RefPtr<Gdk:: Pixbuf > m_pixbuf;
 
 //        Z

@@ -1,11 +1,12 @@
-#include <iostream>
 
 #ifndef OPTIONSTRUCTURE_HPP_INCLUDED
 #define OPTIONSTRUCTURE_HPP_INCLUDED
 
+#include <iostream>
+//#include "opencv2/highgui/highgui.hpp"
+
 struct Options {
         std::string videoFile; // -v PATH
-//        std::string outFile;
         std::string outDir; // -o directory
         int webCamIdx; // -w N
         unsigned int nDishes; // -d N
@@ -18,6 +19,7 @@ struct Options {
         bool writeFirstPicture; // -p
         bool hasGUI; // -G
         bool hasAssistant; // -A
+        std::string maskFile; //-m
 
         Options() :
         videoFile(""),
@@ -34,7 +36,6 @@ struct Options {
         hasGUI(false),
         hasAssistant(false)
         {
-
         }
 };
 

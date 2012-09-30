@@ -34,7 +34,6 @@ class AreaPreviewer : public Gtk::Window
         Gtk::Button m_butt_saveImg;
         cv::Mat mat;
         bool quiet;
-//        cv::Mat mat;
 
 
 };

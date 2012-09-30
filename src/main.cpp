@@ -1,14 +1,30 @@
-#include <iostream>
+/*
+    Copyright Quentin Geissmann 2012
+    This file is part of Ubitrail
 
+    Ubitrail is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    Ubitrail is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+//#include <iostream>
 //#include "../includes/Processor.hpp"
+
 #include "OptionParser.hpp"
 #include "VideoGrabber.hpp"
 #include "Processor.hpp"
 #include "SettingAssistant.hpp"
 #include "Application.hpp"
-
-#include "defines.hpp"
+//#include "defines.hpp"
 
 
 int main(int argc, char **argv){
@@ -68,29 +84,3 @@ int main(int argc, char **argv){
     return 1;
 }
 
-
-
-//   Glib::thread_init();
-//        Gtk::Main kit(argc, argv);
-
-       /* opts = new Options();
-        videoGrab = new VideoGrabber();
-
-
-        SettingAssistant m_Assist(opts,videoGrab);
-
-        Gtk::Main::run(m_Assist);
-*/
-/*FOR TESTING*/
-//optPars = OptionParser(argc,argv);
-//opts = new Options(optPars.GetOptions());
-//videoGrab = new VideoGrabber(opts);
-//videoGrab->reinit(opts);
-//
-//        Processor* pro;
-//        pro = new Processor(*opts, *videoGrab);
-//        Display display(pro);
-//        Application application(pro,*opts);
-//        Gtk::Main::run(application);
-//
-//        delete pro;

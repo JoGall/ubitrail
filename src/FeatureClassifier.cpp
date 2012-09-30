@@ -1,3 +1,21 @@
+/*
+    Copyright Quentin Geissmann 2012
+    This file is part of Ubitrail
+
+    Ubitrail is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Ubitrail is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "FeatureClassifier.hpp"
 //TODO benchmarck row/col
 
@@ -19,14 +37,11 @@ FeatureClassifier::~FeatureClassifier()
     //dtor
 }
 
-void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::Mat& img){
-
+void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,  cv::Mat& img){
     if(contours.size() > 0){
         cv::Mat miniImg;
         std::vector<std::vector< double> > featureArrays(contours.size());
         std::vector< double> likelihoods(contours.size());
-
-        // We calculate features of all objects
         for(unsigned int i = 0; i < contours.size(); i++){
             featureArrays[i].resize(N_FEATURES);
             makeMiniImg(contours[i],miniImg,img);
@@ -35,7 +50,6 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
                 likelihoods[i] = this->calcLikelihood(featureArrays[i]);
             }
         }
-
         unsigned int bestIdx=0;
         float bestLikelihood = -std::numeric_limits<float>::max();
 
@@ -62,7 +76,6 @@ void FeatureClassifier::run(std::vector<std::vector<cv::Point> >& contours,cv::M
 
 }
 
-
 void FeatureClassifier::makeMiniImg(std::vector<cv::Point>& contour,  cv::Mat& miniIMG, cv::Mat& img ){
     cv::Rect ROI;
     ROI = cv::boundingRect(contour);
@@ -71,15 +84,15 @@ void FeatureClassifier::makeMiniImg(std::vector<cv::Point>& contour,  cv::Mat& m
 
 void FeatureClassifier::makeFeatures(std::vector<double>& featureVec,std::vector<cv::Point>& contour,  cv::Mat& miniIMG){
 
+    //Area:
     featureVec[FEATURE_AREA_IDX] = contourArea(contour);
 
-    cv::Moments moms = cv::moments(contour);
 
+    //Distance from the former center:
+    double y,x;
+    cv::Moments moms = cv::moments(contour);
     cv::RotatedRect Rect = cv::minAreaRect(contour);
     cv::Point2f rRect[4];
-
-        double y,x;
-
     Rect.points(rRect);
     if(moms.m00 >0){
         x = moms.m10/moms.m00;
@@ -91,19 +104,16 @@ void FeatureClassifier::makeFeatures(std::vector<double>& featureVec,std::vector
     }
 
     cv::Point2f center(x,y);
-
     double dist, dx,dy;
     dx = (center.x - position.x);
     dy = (center.y - position.y);
     dist = sqrt(dx*dx + dy*dy);
     featureVec[FEATURE_DIST_FROM_FORMER_IDX] = log10(dist+1e-6);
 
+    //Mean of R,G,B and sd of R,G,B
     std::vector<std::vector<cv::Point> > temporaryContours(1);
     temporaryContours[0] = contour;
-
     cv::Mat mask(miniIMG.rows,miniIMG.cols,CV_8U,cv::Scalar(0));
-
-
     std::vector<cv::Point2f> pts(4);
     pts[0] = rRect[0];
     pts[1] = rRect[1];

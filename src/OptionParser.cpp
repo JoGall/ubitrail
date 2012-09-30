@@ -1,3 +1,21 @@
+/*
+    Copyright Quentin Geissmann 2012
+    This file is part of Ubitrail
+
+    Ubitrail is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Ubitrail is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 
 #include "OptionParser.hpp"
 
@@ -17,17 +35,20 @@ OptionParser::OptionParser(){
 OptionParser::OptionParser(int argc, char **argv):
 valid(true) //Assumes that argument are valid
 {
-std::stringstream tss;
-std::string ts;
+
 
 //if no argument, we put -A so that Ubitrai uses the assistant
 if (argc <=1 ){
     opts.hasAssistant= true;
 }
 
-char c=0;
-    while ((c = getopt (argc, argv, "GAhraipd:v:l:w:t:s:o:")) != -1)
 
+
+std::stringstream tss;
+
+char c=0;
+    while ((c = getopt (argc, argv, "GAhraipd:v:l:w:t:s:o:m:")) != -1){
+        tss.str("");
          switch (c)
            {
 
@@ -58,9 +79,7 @@ char c=0;
              break;
         case 'v':
             tss<<optarg;
-            tss>>ts;
-            //TODO erase tss & ts
-            opts.videoFile = ts;
+            opts.videoFile = tss.str();
             break;
         case 'l':
             opts.nLinePerDishes = atoi(optarg);
@@ -77,6 +96,10 @@ char c=0;
         case 'o':
             opts.outDir = optarg;
             break;
+        case 'm':
+            tss<<optarg;
+            opts.maskFile = tss.str();
+            break;
 
            case '?':
             valid = false;
@@ -90,6 +113,7 @@ char c=0;
            default:
                 break;
            }
+    }
 }
 
 bool OptionParser::checkOptions(){
@@ -150,6 +174,11 @@ bool OptionParser::checkOptions(){
         }
     }
 
+//    if(opts.nDishes > 1 && opts.maskFile !=""){
+//         std::cerr<<"Wrong combinaison of arguments"<<std::endl
+//        <<"Option \"-d\" is not compatible with option \"-m\" "<<std::endl;
+//        valid = false;
+//    }
 
     if(!valid){
         this->help();

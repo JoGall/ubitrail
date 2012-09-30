@@ -1,5 +1,3 @@
-
-
 //todel
 #include "defines.hpp"
 #ifndef SETTINGASSISTANT_H
@@ -21,11 +19,7 @@ class SettingAssistant : public Gtk::Assistant
 {
     public:
         SettingAssistant(Options* opts,VideoGrabber* videoGrab, bool *wasAborted);
-//        SettingAssistant();
         virtual ~SettingAssistant();
-//        void test(){
-//            std::cout<<"testttttttttttt"<<std::endl;
-//        };
     protected:
         bool on_delete_event(GdkEventAny* event);
         void on_quit();

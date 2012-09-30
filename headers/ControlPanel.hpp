@@ -35,8 +35,6 @@ class ControlPanel : public Gtk::Window
         Gtk::Label m_lab_ROIpicker,m_lab_gobal, m_lab_area,m_lab_dimentionArea;
 
         Gtk::HSeparator m_sep_gobal, m_sep_area,m_sep_ROIPick;
-
-//        std::string m_str_dimPos, m_str_pos;
         Gtk::Label m_lab_dimPos, m_lab_pos,m_lab_territ,m_lab_dimPos_res, m_lab_pos_res,m_lab_territ_res;
 
         Options m_opts;

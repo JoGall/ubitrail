@@ -3,6 +3,12 @@
 #define OPTIONPARSER_H
 
 #include "optionStructure.hpp"
+#include "opencv2/highgui/highgui.hpp"
+
+/**
+ * The class responsible parsing command line options and storing them to an Options structure.
+ * It also can check for conflicting options.
+ */
 
 class OptionParser
 {

@@ -20,7 +20,6 @@ class Application : public Gtk::Window
         ControlPanel* m_controlPanel;
         DrawingArea* m_drawingArea ;
         Glib::Thread *processingThread, *panelThread, *drawingLoopThread ;
-
         Gtk::EventBox imageContainer;
 
 };
