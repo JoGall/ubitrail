@@ -11,7 +11,7 @@
 #include "Decorator.hpp"
 
 #ifdef WITH_GUI
-#include <glibmm/threads.h>
+#include <glibmm/glibmm.h>
 #endif
 /**
  * The class responsible for the processing.
