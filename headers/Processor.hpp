@@ -137,7 +137,8 @@ class Processor
         bool end;
 
 #ifdef WITH_GUI
-        Glib::Threads::Mutex m_mutexDeco,m_mutexXYTrTe;
+//        Glib::Threads::Mutex m_mutexDeco,m_mutexXYTrTe;
+        Glib::Mutex m_mutexDeco,m_mutexXYTrTe;
         int ROIForGUI;
         float m_XYTrTe[4];
         int m_WHXY_ROI[4];
