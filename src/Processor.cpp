@@ -133,13 +133,15 @@ void Processor::track(){
 #ifdef WITH_GUI
     if(m_hasGUI){
                     {
-                Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+//                Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+                Glib::Mutex::Lock lock (m_mutexDeco);
                 m_decorator.getDecoratedFrame(deco);
                 if(!end)
                     refuseToSendDecoratedFrame = false;
                     }
                     {
-                Glib::Threads::Mutex::Lock lock (m_mutexXYTrTe);
+//                Glib::Threads::Mutex::Lock lock (m_mutexXYTrTe);
+                Glib::Mutex::Lock lock (m_mutexXYTrTe);
                 this->updateXYTrainedTerrit();
                     }
     }

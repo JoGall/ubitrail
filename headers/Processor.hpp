@@ -63,7 +63,8 @@ class Processor
         bool getDeco(cv::Mat& out);
 
         float* getTrackerXYTrainedTerrit(){
-            Glib::Threads::Mutex::Lock lock (m_mutexXYTrTe);
+//            Glib::Threads::Mutex::Lock lock (m_mutexXYTrTe);
+            Glib::Mutex::Lock lock (m_mutexXYTrTe);
             return m_XYTrTe;
         }
 
