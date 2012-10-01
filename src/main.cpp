@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,18 +14,15 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//#include <iostream>
-//#include "../includes/Processor.hpp"
 
 #include "OptionParser.hpp"
 #include "VideoGrabber.hpp"
 #include "Processor.hpp"
 #include "SettingAssistant.hpp"
 #include "Application.hpp"
-//#include "defines.hpp"
 
 
 int main(int argc, char **argv){

@@ -69,7 +69,7 @@ class Processor
         }
 
         int* getTrackerWHXY_ROI(){
-            std::cout<<__LINE__<<std::endl;
+            std::cout<<__FILE__<<":"<<__LINE__<<std::endl;
             return m_WHXY_ROI;
         }
 

@@ -17,8 +17,9 @@ class PageProcessPars: public Gtk::VBox
     protected:
         void updateOpts();
     private:
-        Gtk::Label m_description;
         Glib::ustring m_title;
+        Gtk::Label m_description;
+
         Gtk::Assistant* m_parent;
 
         Gtk::Adjustment m_adju_sensit, m_adju_training;

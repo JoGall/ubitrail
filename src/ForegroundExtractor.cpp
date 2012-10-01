@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,8 +14,9 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include "ForegroundExtractor.hpp"
 
@@ -24,8 +26,8 @@ ForegroundExtractor::ForegroundExtractor(){
 ForegroundExtractor::ForegroundExtractor(int roundToTrain):
 mog(FOREGROUND_EXTRACTOR_HISTORY, FOREGROUND_EXTRACTOR_THR, false),
 roundTrained(0),
-trainingRate(FOREGROUND_EXTRACTOR_TRAINING_SINGLE_BLOB),
-m_roundToTrain(roundToTrain)
+m_roundToTrain(roundToTrain),
+trainingRate(FOREGROUND_EXTRACTOR_TRAINING_SINGLE_BLOB)
 {
 }
 

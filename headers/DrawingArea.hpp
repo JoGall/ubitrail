@@ -16,7 +16,6 @@ class DrawingArea : public Gtk::DrawingArea
         double scaleRatio(int imgW, int imgH);
         void render();
         void makeNewPixbuf();
-        bool test();
     private:
         Glib::RefPtr<Gdk:: Pixbuf > pixbuf;
         Processor* m_pro;
@@ -25,7 +24,7 @@ class DrawingArea : public Gtk::DrawingArea
         std::string* m_ROI;
         cv::Mat mat;
         Glib::Dispatcher m_dispa;
-//        Glib::Threads::Mutex test;
+        Glib::Mutex m_mutexRender;
 };
 
 #endif // DRAWINGAREA_H

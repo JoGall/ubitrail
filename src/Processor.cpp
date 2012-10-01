@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,22 +14,13 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "Processor.hpp"
 #include "ROIMaker.hpp"
 #include "Area.hpp"
 #include "VideoWriter.hpp"
-
-//#include <fstream>
-//#include <iostream>
-//#include <sstream>
-//#include <iomanip>
-
-//#include <iostream>
-//#include <sstream>
-
 
 Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::Mat* preview):
     m_options(options),
@@ -176,7 +168,7 @@ void Processor::makeBG(cv::Mat& bg){
 std::vector<std::string> Processor::makeLabels(std::vector< cv::Rect > newROIs){
 
 
-    std::vector< int > used;
+    std::vector< unsigned int > used;
     std::vector< int > labIdx;
     int accu=0;
     double lim=0.5;
@@ -211,7 +203,7 @@ std::vector<std::string> Processor::makeLabels(std::vector< cv::Rect > newROIs){
                 used.push_back(i);
             }
         }
-        std::vector< int > used2;
+        std::vector< unsigned int > used2;
         while(used2.size() < ROIsIdxRow.size()){
             int first=0;
             int firstX=INT_MAX;
@@ -232,19 +224,15 @@ std::vector<std::string> Processor::makeLabels(std::vector< cv::Rect > newROIs){
     }
     accu=accu+ROIsIdxRow.size();
     }//end of big while
-    std::vector< int > labss(labIdx.size());
+    std::vector< unsigned int > labss(labIdx.size());
     for(unsigned int i =0; i<used.size();i++){
         labss[labIdx[i]]=i;
     }
     std::vector<std::string> labels;
     for(unsigned int i =0; i<labss.size();i++){
-//        std::stringstream tss;
-
         char buffer [10];
         sprintf(buffer,"%02i",labss[i]);
         std::string ts(buffer);
-//        tss<<labss[i];
-//        tss>>ts;
 
         labels.push_back(ts);
     }
@@ -261,7 +249,7 @@ void Processor::setROIForGUI(std::string ROIName){
         int idx = -1;
         for(unsigned int i = 0; i < trackers.size(); i++){
             if(trackers[i].getLabel() == ROIName){
-                    idx = i;
+                    idx = (int) i;
             }
         }
         ROIForGUI = idx;

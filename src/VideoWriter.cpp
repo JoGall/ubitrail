@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,27 +14,24 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include <sstream>
 #include "VideoWriter.hpp"
 
 VideoWriter::VideoWriter()
 {
-    //ctor
 }
+
 VideoWriter::VideoWriter(std::vector<Tracker>* trackers, Options& options,cv::Size globalFrameSize, int fps):
 m_options(options)
 {
-    //ctor
     m_trackers = new std::vector<Tracker>;
     m_trackers = trackers;
     globalFrame = m_options.allFrameOutput;
     singleAreas = m_options.videosOutput;
-
-
-//    cvWriters.resize(nWriter);
 
     if(globalFrame){
         std::stringstream tss;
@@ -67,12 +65,8 @@ VideoWriter::~VideoWriter()
 
 
 void VideoWriter::newFrame(cv::Mat& frame){
-//    std::cout<<"srdsdwqadf "<<cvWriters.size() <<std::endl;
     #pragma omp parallel for schedule (dynamic) num_threads(m_trackers->size())
     for(unsigned int i = 0; i < cvWriters.size(); i++){
-//        if(globalFrame){
             cvWriters[i].write(frame(ROIs[i]));
-//        }
     }
-
 }

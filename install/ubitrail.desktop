@@ -1,12 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Name=Ubitrail
-Name[en_GB]=Ubitrail
 Comment=A program to quantify animal locomotion behaviour from video
-Comment[en_GB]=A program to quantify animal locomotion behaviour from video
 Exec=/usr/bin/ubitrail
-Icon=/usr/share/ubitrail/ubitrail.png
-Icon[en_GB]=/usr/share/ubitrail/ubitrail.svg
+Icon=/usr/share/ubitrail/ubitrail.svg
 Type=Application
 Terminal=false
 Categories=Science

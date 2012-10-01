@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,8 +14,9 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include "PageVideoInput.hpp"
 
@@ -54,17 +56,17 @@ PageVideoInput::~PageVideoInput()
 
 void PageVideoInput::on_loadFile_clicked(){
 
-Gtk::FileChooserDialog dialog("Please choose a file",
-          Gtk::FILE_CHOOSER_ACTION_OPEN);
-  dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
-  dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
-  Gtk::FileFilter filter_any, filter_avi;
-  filter_any.set_name("Any files");
-  filter_avi.set_name(".avi videos");
-  filter_any.add_pattern("*");
-  filter_avi.add_pattern("*.avi");
-  dialog.add_filter(filter_avi);
-  dialog.add_filter(filter_any);
+    Gtk::FileChooserDialog dialog("Please choose a file",
+    Gtk::FILE_CHOOSER_ACTION_OPEN);
+    dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+    dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
+    Gtk::FileFilter filter_any, filter_avi;
+    filter_any.set_name("Any files");
+    filter_avi.set_name(".avi videos");
+    filter_any.add_pattern("*");
+    filter_avi.add_pattern("*.avi");
+    dialog.add_filter(filter_avi);
+    dialog.add_filter(filter_any);
 
   int result = dialog.run();
 

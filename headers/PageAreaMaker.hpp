@@ -17,7 +17,6 @@
 class PageAreaMaker: public Gtk::VBox
 {
     public:
-//        PageAreaMaker();
         PageAreaMaker(Gtk::Assistant* parent,Options* opts,VideoGrabber* videoGrab);
         virtual ~PageAreaMaker();
         Glib::ustring get_title(){
@@ -30,8 +29,8 @@ class PageAreaMaker: public Gtk::VBox
         void makePreview();
         void on_loadFile_clicked();
     private:
-        Gtk::Label m_description;
         Glib::ustring m_title;
+        Gtk::Label m_description;
         Gtk::Assistant* m_parent;
         Gtk::ComboBoxText m_mode;
         Gtk::HBox m_hb0;

@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "ControlPanel.hpp"
@@ -220,10 +221,12 @@ void ControlPanel::updateLabels(){
 
 
 void ControlPanel::on_changeArea(){
+    std::cout<<__FILE__<<":"<<__LINE__<<std::endl;
     if(m_ROIPicker.get_active_text() == "Whole frame"){
         m_info_area.hide();
         m_pro->setROIForGUI("");
     }
+
     else{
         std::stringstream tss;
 
@@ -238,15 +241,13 @@ void ControlPanel::on_changeArea(){
 
         m_info_area.show();
     }
+    std::cout<<__FILE__<<":"<<__LINE__<<std::endl;
 }
 
 void ControlPanel::on_finished(){
     this->finished = true;
     std::stringstream tss;
-
-
     m_progressBar.set_text(tss.str());
-
     tss <<"Processing complete.  <a href=\"file://"
         <<m_opts.outDir
         <<"\" "
@@ -265,11 +266,5 @@ void ControlPanel::on_finished(){
         <<" if your need help for analysing data.";
 
     Gtk::MessageDialog dialog (tss.str(),true);
-
     dialog.run();
-
 }
-
-//void ControlPanel::closeMe(){
-//    Gtk::Main::quit();
-//}

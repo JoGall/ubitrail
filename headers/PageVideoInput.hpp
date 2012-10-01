@@ -19,10 +19,11 @@ class PageVideoInput : public Gtk::VBox
         void on_loadFile_clicked();
 //        void on_complete();
     private:
+        Glib::ustring m_title;
         Gtk::Label m_description;
         Gtk::Label m_currentFileName;
         Gtk::Button m_loadFile;
-        Glib::ustring m_title;
+
         Glib::ustring fileLocation;
         Gtk::HBox m_hb1;
         int webCamIdx;

@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,13 +14,12 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include "PageAreaMaker.hpp"
 
-//PageAreaMaker::PageAreaMaker(){
-//}
 
 PageAreaMaker::PageAreaMaker(Gtk::Assistant* parent,Options* opts,VideoGrabber* videoGrab ):
 m_title(PAGE_AREA_TITLE),
@@ -97,7 +97,7 @@ void PageAreaMaker::on_mode_changed(){
 void PageAreaMaker::hideModeBoxes(){
 
     int active(m_mode.get_active_row_number());
-    for(unsigned int i = 0; i < N_MODES ;i++){
+    for(int i = 0; i < N_MODES ;i++){
         if(active == i)
              m_modeVboxes[i].show();
         else

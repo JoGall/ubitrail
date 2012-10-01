@@ -127,7 +127,7 @@ class FeatureClassifier
         cv::Mat featuresMeansSds;
         cv::Mat positionsAccum;
         unsigned long roundTrained;
-        int m_roundToTrain;
+        unsigned int m_roundToTrain;
         cv::Point2f position,realPosition;
         float L;
 };

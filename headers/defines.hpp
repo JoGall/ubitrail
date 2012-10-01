@@ -2,6 +2,12 @@
 #define MY_DEFINES
 #define WITH_GUI
 
+#ifndef PROGRAM_NAME
+
+#define PROGRAM_NAME "Ubitrail"
+#define WEBSITE_URI "http://ubitrail.sourceforge.net"
+
+#endif
 
 #define N_AVERAGED_FRAMES_BG 20
 #define TRACKER_ACCU_WEIGHT 0.5

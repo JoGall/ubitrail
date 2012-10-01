@@ -4,7 +4,7 @@ PROGRAM_NAME := '"Ubitrail"'
 WEBSITE_URI := '"http://ubitrail.sourceforge.net"'
 
 # The version
-VERSION := 1
+VERSION := 1.1
 
 # The minimal version for OpenCV
 MIN_OCV_VERSION := 2.3
@@ -18,11 +18,6 @@ SAMPLES_DIR := samples/
 SOURCES := $(shell ls $(SOURCE_DIR)*.cpp)
 # And the object files are/will have the same name with ".o" sufix
 OBJS := $(patsubst %.cpp, %.o, $(notdir $(SOURCES)))
-
-# SAMPLES := $(shell ls $(SAMPLES_DIR)crop*.avi )
-
-# RESULTS := $(patsubst %.avi, %.out, $(SAMPLES))
-
 
 
 # The compiler
@@ -40,6 +35,7 @@ CPPFLAGS += $(shell pkg-config --cflags opencv)
 CPPFLAGS +=  -fopenmp
 CPPFLAGS += $(shell pkg-config --cflags gtkmm-2.4)
 CPPFLAGS += $(shell pkg-config --cflags gthread-2.0 glibmm-2.4)
+CPPFLAGS += -std=c++11
 
 LIBS = $(shell pkg-config  --libs opencv)
 LIBS +=  -fopenmp
@@ -66,10 +62,9 @@ endif
 
 # We tell make to look for pre-requisites in the source directory
 vpath %.cpp  src
-#vpath %.avi  $(SAMPLES_DIR)
 
 
-.PHONY: all clean test R linuxRelease
+.PHONY: all clean test R linuxRelease install
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 all : $(EXEC_NAME)
 
@@ -82,7 +77,7 @@ $(EXEC_NAME) : $(OBJS)
 %.o : %.cpp
 	@echo "Building $*.o"
 	$(CXX) -c $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp -o $*.o
-	gcc -MM -I$(HEADERS_DIR) $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp > $*.d
+	@gcc -MM $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp > $*.d
 	@mv -f $*.d $*.d.tmp
 	@sed -e 's|.*:|$*.o:|' < $*.d.tmp > $*.d
 	@sed -e 's/.*://' -e 's/\\$$//' < $*.d.tmp | fmt -1 | sed -e 's/^ *//' -e 's/$$/:/' >> $*.d
@@ -95,8 +90,8 @@ $(EXEC_NAME) : $(OBJS)
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 install: $(EXEC_NAME) install/icons/ubitrail.svg ./install/$(EXEC_NAME).desktop
 	sudo mkdir -p /usr/share/$(EXEC_NAME)/
-	sudo cp ./install/icons/ubitrail.png /usr/share/$(EXEC_NAME)/
-	sudo chmod 755 /usr/share/$(EXEC_NAME)/ubitrail.png
+	sudo cp ./install/icons/ubitrail.svg /usr/share/$(EXEC_NAME)/
+	sudo chmod 755 /usr/share/$(EXEC_NAME)/ubitrail.svg
 	sudo cp ./$(EXEC_NAME) /usr/bin/
 	sudo chmod 755 /usr/bin/$(EXEC_NAME)
 	sudo cp ./install/$(EXEC_NAME).desktop /usr/share/applications/
@@ -149,7 +144,6 @@ R : $(R_TGZ)
 $(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
 	@echo "Roxygeniting:"
 	@echo "library(roxygen2); roxygenise(\"$(PACKAGE_NAME)\",roxygen.dir=$(\"R_DIR\"),copy.package=F,unlink.target=F)" | R --vanilla
-#	@R --vanilla --slave < $(ROXYGEN_FILE)
 	@echo "Building Package $(R_TGZ):"
 	@R CMD build rubitrail
 
@@ -158,5 +152,5 @@ $(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 releaseAll: $(R_TGZ) $(LINUX_TARBALL)
 	make clean
-	rsync -avP -e ssh * quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/all
+#	rsync -avP -e ssh * quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/all
 

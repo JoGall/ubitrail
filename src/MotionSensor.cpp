@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,8 +14,9 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include "MotionSensor.hpp"
 
@@ -22,10 +24,8 @@ MotionSensor::MotionSensor(){
 }
 
 MotionSensor::MotionSensor(int sensitivity,cv::Mat& mask):
-//mog(MOTION_SENSOR_HISTORY, MOTION_SENSOR_THR, false),
-//trainingRate(MOTION_SENSOR_TRAINING_MIN),
-m_sensitivity(sensitivity),
-m_mask(mask)
+m_mask(mask),
+m_sensitivity(sensitivity)
 {
     //ctor
 }

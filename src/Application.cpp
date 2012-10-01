@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "Application.hpp"
@@ -24,9 +25,6 @@ Application::Application(Processor* pro,Options opts){
     this->set_border_width(5);
     this->add(imageContainer);
     this->set_resizable(false);
-//    this->set_deletable(false);
-
-
     m_pro = pro;
 
     ROI = new std::string("");
@@ -34,8 +32,6 @@ Application::Application(Processor* pro,Options opts){
     m_controlPanel = new ControlPanel(pro,ROI,opts);
     processingThread = Glib::Thread::create(sigc::mem_fun(m_pro, &Processor::track), true);
     drawingLoopThread = Glib::Thread::create(sigc::mem_fun(m_drawingArea, &DrawingArea::loop), true);
-
-
     imageContainer.add(*m_drawingArea);
 
     m_drawingArea->show();
@@ -60,8 +56,9 @@ bool Application::on_delete_event(GdkEventAny* event){
     Gtk::MessageDialog dialog(*this, "Quit?!",false, Gtk::MESSAGE_QUESTION,Gtk::BUTTONS_OK_CANCEL);
     dialog.set_secondary_text(tss.str());
     int result = dialog.run();
-    if(result==GTK_RESPONSE_OK)
+    if(result==GTK_RESPONSE_OK){
         return false;
+    }
     else{
         return true;
     }

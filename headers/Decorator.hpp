@@ -20,9 +20,10 @@ class Decorator
         void makeStaticOverlay();
     private:
         std::vector<Tracker> *m_trackers;
+        cv::Mat staticOverlay,staticGrayTip,frameCopy;
         std::vector<cv::Point2f > pos;
         std::vector<bool> posIsValid;
-        cv::Mat staticOverlay,staticGrayTip,frameCopy;
+
 };
 
 #endif // DECORATOR_H

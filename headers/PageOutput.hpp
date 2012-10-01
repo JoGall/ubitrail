@@ -21,8 +21,9 @@ class PageOutput : public Gtk::VBox
         void on_update();
         void on_start();
     private:
-        Gtk::Label m_description;
         Glib::ustring m_title;
+        Gtk::Label m_description;
+
         Gtk::Assistant* m_parent;
         Options* m_opts;
         VideoGrabber* m_videoGrab;

@@ -1,5 +1,6 @@
 /*
     Copyright Quentin Geissmann 2012
+
     This file is part of Ubitrail
 
     Ubitrail is free software: you can redistribute it and/or modify
@@ -13,8 +14,9 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 #include "Tracker.hpp"
 
@@ -26,8 +28,8 @@ Tracker::Tracker(Area area,const std::string  label, Options& options):
 m_area(area),
 m_label(label),
 motionSensor(options.motionSensitivity,m_area.getTerrit()),
-featureClassifier(options.MOGTrainingRounds),
 foregroundExtractor(options.MOGTrainingRounds),
+featureClassifier(options.MOGTrainingRounds),
 wasAmbiguous(false),
 isTrained(false)
 {
