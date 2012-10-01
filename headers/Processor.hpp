@@ -11,7 +11,8 @@
 #include "Decorator.hpp"
 
 #ifdef WITH_GUI
-#include "glibmm/glibmm.h"
+//#include "glibmm/glibmm.h"
+#include "c:/gtkmm/include/glibmm-2.4/glibmm/thread.h"
 //#include <gtkmm.h>
 #endif
 /**
