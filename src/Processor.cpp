@@ -307,11 +307,13 @@ void Processor::updateXYTrainedTerrit(){
 bool Processor::getDeco(cv::Mat& out){
     if(!refuseToSendDecoratedFrame){
         if(ROIForGUI == -1){
-            Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+//            Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+            Glib::Mutex::Lock lock (m_mutexDeco);
             deco.copyTo(out);
         }
         else{
-            Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+//            Glib::Threads::Mutex::Lock lock (m_mutexDeco);
+            Glib::Mutex::Lock lock (m_mutexDeco);
             deco(trackers[ROIForGUI].getROI()).copyTo(out);
         }
         refuseToSendDecoratedFrame = true;
