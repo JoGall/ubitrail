@@ -35,7 +35,7 @@ CPPFLAGS += -DVERSION=$(VERSION)
 CPPFLAGS += -DPROGRAM_NAME=$(PROGRAM_NAME)
 CPPFLAGS += -DWEBSITE_URI=$(WEBSITE_URI)
 # We define the include location of opencv
-#TODO --atleast-version=$(MIN_OCV_VERSION) 
+#TODO --atleast-version=$(MIN_OCV_VERSION)
 CPPFLAGS += $(shell pkg-config --cflags opencv)
 CPPFLAGS +=  -fopenmp
 CPPFLAGS += $(shell pkg-config --cflags gtkmm-2.4)
@@ -70,7 +70,7 @@ vpath %.cpp  src
 
 
 .PHONY: all clean test R linuxRelease
-#I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+#I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 all : $(EXEC_NAME)
 
 # linking
@@ -82,7 +82,7 @@ $(EXEC_NAME) : $(OBJS)
 %.o : %.cpp
 	@echo "Building $*.o"
 	$(CXX) -c $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp -o $*.o
-	gcc -MM -I$(HEADERS_DIR) $(SOURCE_DIR)/$*.cpp > $*.d
+	gcc -MM -I$(HEADERS_DIR) $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp > $*.d
 	@mv -f $*.d $*.d.tmp
 	@sed -e 's|.*:|$*.o:|' < $*.d.tmp > $*.d
 	@sed -e 's/.*://' -e 's/\\$$//' < $*.d.tmp | fmt -1 | sed -e 's/^ *//' -e 's/$$/:/' >> $*.d
@@ -92,7 +92,7 @@ $(EXEC_NAME) : $(OBJS)
 -include $(OBJS:.o=.d)
 
 
-#I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+#I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 install: $(EXEC_NAME) install/icons/ubitrail.svg ./install/$(EXEC_NAME).desktop
 	sudo mkdir -p /usr/share/$(EXEC_NAME)/
 	sudo cp ./install/icons/ubitrail.png /usr/share/$(EXEC_NAME)/
@@ -115,11 +115,11 @@ clean:
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 LINUX_TARBALL := $(EXEC_NAME)-$(VERSION).tar.gz
-	
+
 linuxRelease: $(LINUX_TARBALL)
 	@echo releasing to sourceforge:
 	rsync -avP -e ssh $(LINUX_TARBALL) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/linux/
-	
+
 $(LINUX_TARBALL): $(EXEC_NAME)
 #	TMP = $(shell mktemp -d)
 #	$(eval TMP=$(shell mktemp -d))
@@ -129,7 +129,7 @@ $(LINUX_TARBALL): $(EXEC_NAME)
 	tar -pczf $@  $(EXEC_NAME)-$(VERSION)/
 	rm -r $(EXEC_NAME)-$(VERSION)/
 	echo "Uploading Windows setup"
-	
+
 
 #Build the R package~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,7 +144,7 @@ R : $(R_TGZ)
 	R CMD Rd2pdf --force rubitrail
 	@echo "installing rubitrail"
 	R CMD INSTALL rubitrail*.tar.gz
-	
+
 
 $(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
 	@echo "Roxygeniting:"
@@ -152,9 +152,9 @@ $(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
 #	@R --vanilla --slave < $(ROXYGEN_FILE)
 	@echo "Building Package $(R_TGZ):"
 	@R CMD build rubitrail
-	
-	
-	
+
+
+
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 releaseAll: $(R_TGZ) $(LINUX_TARBALL)
 	make clean
