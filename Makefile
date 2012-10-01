@@ -39,12 +39,12 @@ CPPFLAGS += -DWEBSITE_URI=$(WEBSITE_URI)
 CPPFLAGS += $(shell pkg-config --cflags opencv)
 CPPFLAGS +=  -fopenmp
 CPPFLAGS += $(shell pkg-config --cflags gtkmm-2.4)
-CPPFLAGS += $(shell pkg-config --cflags gthread-2.0)
+CPPFLAGS += $(shell pkg-config --cflags gthread-2.0 glibmm-2.4)
 
 LIBS = $(shell pkg-config  --libs opencv)
 LIBS +=  -fopenmp
 LIBS += $(shell pkg-config --libs gtkmm-2.4)
-LIBS += $(shell pkg-config --libs gthread-2.0)
+LIBS += $(shell pkg-config --libs gthread-2.0 glibmm-2.4)
 # We define the mode it should be one of those 3:
 #mode = debug
 mode = devel
