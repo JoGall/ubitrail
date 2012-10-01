@@ -18,7 +18,7 @@
 
 #include <assert.h>
 #include "ResultWriter.hpp"
-//#include <cstdio>
+#include <time.h>
 
 ResultWriter::ResultWriter(){
 
