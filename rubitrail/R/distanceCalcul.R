@@ -37,7 +37,7 @@ rubitDist <- function(m){
 	m <- cbind(m, distance)
 	return(m[-1,])
 	}
-	
+NULL	
 	
 
     
