@@ -18,5 +18,5 @@ NULL
 #install.packages("rubitrail_0.1.tar.gz");
 #library("rubitrail");
 #?rubitRead' | R --vanilla
-
+NULL
  

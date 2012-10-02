@@ -35,6 +35,7 @@ rubitRead <- function(FILE){
 	# returns the list
 	return(l);
 }
+
 NULL
 
 #' This is a function to display global information about a result file.
