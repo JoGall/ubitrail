@@ -29,7 +29,7 @@ ubitrail
 *.out
 *~
 #data file
-data/
+#data/
 html/
 latex/
 windowsBuild/
