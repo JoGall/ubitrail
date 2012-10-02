@@ -56,4 +56,5 @@ rubitGlobal <- function(FILE){
 		)
 	return(l);
 }
+
 NULL

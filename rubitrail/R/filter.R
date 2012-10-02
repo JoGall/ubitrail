@@ -69,7 +69,7 @@ rubitFilter<-function(m,splFreq = 10, k = 25 ,minRead = k*100){
 	#	We return NULL if the data was to short
 	return(NULL);
     }
-NULL
+NULL 
 
 
 

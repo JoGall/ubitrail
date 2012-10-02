@@ -1,7 +1,7 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #	Copyright Quentin Geissmann 2012
 #
-#	This is a part of Ubitrail
+#	This is a part of Ubitrail 
 #
 #	Ubitrail is free software: you can redistribute it and/or modify
 #  	it under the terms of the GNU General Public License as published by
