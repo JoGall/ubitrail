@@ -132,18 +132,19 @@ R_DIR = rubitrail/
 R_SOURCES := $(shell ls $(R_DIR)/R/*.R )
 N = $(shell cat $(R_DIR)/DESCRIPTION |grep ^Package | cut --fields=2 --delimiter=: |sed s/\ //g)
 V := $(shell cat $(R_DIR)/DESCRIPTION |grep ^Version  | cut --fields=2 --delimiter=: |sed s/\ //g)
-#R_TGZ := $(shell cat $(R_DIR)/DESCRIPTION |grep ^Package  | cut --fields=2 --delimiter=: |sed s/\ //)_$(cat $(R_DIR)/DESCRIPTION |grep ^Version  | cut --fields=2 --delimiter=: |sed s/\ //)".tar.gz"
 R_TGZ := $(N)_$(V).tar.gz
+R_PDF := $(N).pdf
 vpath %.R  $(R_DIR)
 PACKAGE_NAME := rubitrail
 
 
-R : $(R_TGZ)
-	R CMD Rd2pdf --force rubitrail
+R : $(R_TGZ) $(R_PDF)
 	@echo "installing rubitrail"
 	R CMD INSTALL rubitrail*.tar.gz
-
-
+	
+$(R_PDF) : $(R_SOURCES)
+	R CMD Rd2pdf --force rubitrail
+	
 $(R_TGZ) : $(R_SOURCES) 
 	@echo "Roxygeniting:"
 	@echo "library(roxygen2); roxygenise(\"$(PACKAGE_NAME)\",roxygen.dir=$(\"R_DIR\"),copy.package=F,unlink.target=F)" | R --vanilla
@@ -157,5 +158,5 @@ releaseAll: $(R_TGZ) $(LINUX_TARBALL)
 	@echo "uploading $(LINUX_TARBALL)"
 	rsync -avP -e ssh $(LINUX_TARBALL) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/linux
 	@echo "uploading $(R_TGZ)"
-	rsync -avP -e ssh $(R_TGZ) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/R
+	rsync -avP -e ssh $(R_TGZ) $(R_PDF) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/R
 #	make clean

@@ -221,7 +221,6 @@ void ControlPanel::updateLabels(){
 
 
 void ControlPanel::on_changeArea(){
-    std::cout<<__FILE__<<":"<<__LINE__<<std::endl;
     if(m_ROIPicker.get_active_text() == "Whole frame"){
         m_info_area.hide();
         m_pro->setROIForGUI("");
@@ -241,7 +240,6 @@ void ControlPanel::on_changeArea(){
 
         m_info_area.show();
     }
-    std::cout<<__FILE__<<":"<<__LINE__<<std::endl;
 }
 
 void ControlPanel::on_finished(){

@@ -140,7 +140,6 @@ void PageAreaMaker::makePreview(){
     m_generatePreview.set_sensitive(false);
     this->updateOpts();
     cv::Mat mat;
-    m_videoGrab->reset();
     Processor pro(*m_opts,*m_videoGrab,false,&mat);
     m_areaPreview.setMat( mat);
     m_generatePreview.set_sensitive(true);

@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="release">
-				<Option output="windowsBuild\bin\Ubitrail" prefix_auto="1" extension_auto="1" />
-				<Option object_output="\home\quentin\biology\Ubitrail\Ubitrail\.objs" />
+				<Option output="windowsBuild/bin/Ubitrail" prefix_auto="1" extension_auto="1" />
+				<Option object_output="/home/quentin/biology/Ubitrail/Ubitrail/.objs" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -31,10 +31,10 @@
 					<Add option="-s" />
 					<Add option="-LC:/gtkmm/lib -Lc:/devel/dist/win32/libpng-1.4.3-1/lib -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-win32-2.0 -lcairomm-1.0 -lgdk-win32-2.0 -latk-1.0 -lgio-2.0 -lpangowin32-1.0 -lgdi32 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lpng14 -lpango-1.0 -lcairo -lgmodule-2.0 -lglibmm-2.4 -lgobject-2.0 -lsigc-2.0 -lgthread-2.0 -lglib-2.0 -lintl" />
 					<Add option="-fopenmp" />
-					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_core242.dll.a" />
-					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_highgui242.dll.a" />
-					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_imgproc242.dll.a" />
-					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_video242.dll.a" />
+					<Add library="../../../../../../../opencv/build/x86/mingw/lib/libopencv_core242.dll.a" />
+					<Add library="../../../../../../../opencv/build/x86/mingw/lib/libopencv_highgui242.dll.a" />
+					<Add library="../../../../../../../opencv/build/x86/mingw/lib/libopencv_imgproc242.dll.a" />
+					<Add library="../../../../../../../opencv/build/x86/mingw/lib/libopencv_video242.dll.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -48,52 +48,54 @@
 		<Unit filename="TODOlist">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="headers\Application.hpp" />
-		<Unit filename="headers\Area.hpp" />
-		<Unit filename="headers\AreaPreviewer.hpp" />
-		<Unit filename="headers\ControlPanel.hpp" />
-		<Unit filename="headers\Decorator.hpp" />
-		<Unit filename="headers\DrawingArea.hpp" />
-		<Unit filename="headers\FeatureClassifier.hpp" />
-		<Unit filename="headers\ForegroundExtractor.hpp" />
-		<Unit filename="headers\MotionSensor.hpp" />
-		<Unit filename="headers\OptionParser.hpp" />
-		<Unit filename="headers\PageAreaMaker.hpp" />
-		<Unit filename="headers\PageOutput.hpp" />
-		<Unit filename="headers\PageProcessPars.hpp" />
-		<Unit filename="headers\PageVideoInput.hpp" />
-		<Unit filename="headers\Processor.hpp" />
-		<Unit filename="headers\ROIMaker.hpp" />
-		<Unit filename="headers\ResultWriter.hpp" />
-		<Unit filename="headers\SettingAssistant.hpp" />
-		<Unit filename="headers\Tracker.hpp" />
-		<Unit filename="headers\VideoGrabber.hpp" />
-		<Unit filename="headers\VideoWriter.hpp" />
-		<Unit filename="headers\defines.hpp" />
-		<Unit filename="headers\guiText.hpp" />
-		<Unit filename="headers\optionStructure.hpp" />
-		<Unit filename="src\Application.cpp" />
-		<Unit filename="src\Area.cpp" />
-		<Unit filename="src\AreaPreviewer.cpp" />
-		<Unit filename="src\ControlPanel.cpp" />
-		<Unit filename="src\Decorator.cpp" />
-		<Unit filename="src\DrawingArea.cpp" />
-		<Unit filename="src\FeatureClassifier.cpp" />
-		<Unit filename="src\ForegroundExtractor.cpp" />
-		<Unit filename="src\MotionSensor.cpp" />
-		<Unit filename="src\OptionParser.cpp" />
-		<Unit filename="src\PageAreaMaker.cpp" />
-		<Unit filename="src\PageOutput.cpp" />
-		<Unit filename="src\PageProcessPars.cpp" />
-		<Unit filename="src\PageVideoInput.cpp" />
-		<Unit filename="src\Processor.cpp" />
-		<Unit filename="src\ROIMaker.cpp" />
-		<Unit filename="src\ResultWriter.cpp" />
-		<Unit filename="src\SettingAssistant.cpp" />
-		<Unit filename="src\Tracker.cpp" />
-		<Unit filename="src\VideoGrabber.cpp" />
-		<Unit filename="src\VideoWriter.cpp" />
-		<Unit filename="src\main.cpp" />
+		<Unit filename="headers/Application.hpp" />
+		<Unit filename="headers/Area.hpp" />
+		<Unit filename="headers/AreaPreviewer.hpp" />
+		<Unit filename="headers/ControlPanel.hpp" />
+		<Unit filename="headers/Decorator.hpp" />
+		<Unit filename="headers/DrawingArea.hpp" />
+		<Unit filename="headers/FeatureClassifier.hpp" />
+		<Unit filename="headers/ForegroundExtractor.hpp" />
+		<Unit filename="headers/MotionSensor.hpp" />
+		<Unit filename="headers/OptionParser.hpp" />
+		<Unit filename="headers/PageAreaMaker.hpp" />
+		<Unit filename="headers/PageOutput.hpp" />
+		<Unit filename="headers/PageProcessPars.hpp" />
+		<Unit filename="headers/PageVideoInput.hpp" />
+		<Unit filename="headers/Processor.hpp" />
+		<Unit filename="headers/ROIMaker.hpp" />
+		<Unit filename="headers/ResultWriter.hpp" />
+		<Unit filename="headers/SettingAssistant.hpp" />
+		<Unit filename="headers/Tracker.hpp" />
+		<Unit filename="headers/VideoGrabber.hpp" />
+		<Unit filename="headers/VideoWriter.hpp" />
+		<Unit filename="headers/WaitingMessage.hpp" />
+		<Unit filename="headers/defines.hpp" />
+		<Unit filename="headers/guiText.hpp" />
+		<Unit filename="headers/optionStructure.hpp" />
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Area.cpp" />
+		<Unit filename="src/AreaPreviewer.cpp" />
+		<Unit filename="src/ControlPanel.cpp" />
+		<Unit filename="src/Decorator.cpp" />
+		<Unit filename="src/DrawingArea.cpp" />
+		<Unit filename="src/FeatureClassifier.cpp" />
+		<Unit filename="src/ForegroundExtractor.cpp" />
+		<Unit filename="src/MotionSensor.cpp" />
+		<Unit filename="src/OptionParser.cpp" />
+		<Unit filename="src/PageAreaMaker.cpp" />
+		<Unit filename="src/PageOutput.cpp" />
+		<Unit filename="src/PageProcessPars.cpp" />
+		<Unit filename="src/PageVideoInput.cpp" />
+		<Unit filename="src/Processor.cpp" />
+		<Unit filename="src/ROIMaker.cpp" />
+		<Unit filename="src/ResultWriter.cpp" />
+		<Unit filename="src/SettingAssistant.cpp" />
+		<Unit filename="src/Tracker.cpp" />
+		<Unit filename="src/VideoGrabber.cpp" />
+		<Unit filename="src/VideoWriter.cpp" />
+		<Unit filename="src/WaitingMessage.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion>

@@ -45,7 +45,7 @@ m_options(options)
        for(unsigned int i = 0; i < trackers->size();i++){
         std::stringstream tss;
         tss<<m_options.outDir<<"/"<<(*trackers)[i].getLabel()<<".avi";
-        cv::Size size((*trackers)[i].getROI().width,(*trackers)[i].getROI().height);
+        cv::Size size((*trackers)[i].getROI().width,(*trackers)[i].getROI().width);
 
         cvWriters.push_back(cv::VideoWriter(tss.str(), VIDEO_WRITER_CODEC, fps,size));
          ROIs.push_back((*trackers)[i].getROI());

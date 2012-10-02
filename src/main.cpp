@@ -23,7 +23,7 @@
 #include "Processor.hpp"
 #include "SettingAssistant.hpp"
 #include "Application.hpp"
-
+#include "WaitingMessage.hpp"
 
 int main(int argc, char **argv){
 
@@ -45,25 +45,41 @@ int main(int argc, char **argv){
         pro = new Processor(*opts, *videoGrab);
         pro->track();
     }
+
     else {
         Glib::thread_init();
         Gtk::Main kit(argc, argv);
         bool *assistantWasAborted;
         assistantWasAborted = new bool(false);
+
+
         if(!opts->hasAssistant){
+            WaitingMessage wm;
             videoGrab = new VideoGrabber(opts);
+            Glib::Thread *messageThread;
+            messageThread = Glib::Thread::create(sigc::mem_fun(wm, &WaitingMessage::runMe), true);
             pro = new Processor(*opts, *videoGrab,true);
+            Gtk::Main::quit();
+            messageThread->join();
             }
 
         else{
             opts = new Options();
+            opts->hasAssistant = true;
             videoGrab = new VideoGrabber();
             SettingAssistant m_Assist(opts,videoGrab,assistantWasAborted);
             Gtk::Main::run(m_Assist);
         }
 
         if(!(*assistantWasAborted)){
-            pro = new Processor(*opts, *videoGrab,true);
+            if(opts->hasAssistant){
+                WaitingMessage wm;
+                Glib::Thread *messageThread;
+                messageThread = Glib::Thread::create(sigc::mem_fun(wm, &WaitingMessage::runMe), true);
+                pro = new Processor(*opts, *videoGrab,true);
+                Gtk::Main::quit();
+                messageThread->join();
+            }
             Application application(pro,*opts);
             Gtk::Main::run(application);
         }
@@ -71,8 +87,9 @@ int main(int argc, char **argv){
             hasNewPro = false;
             delete assistantWasAborted;
         }
-
     }
+
+//    }
     delete opts;
     delete videoGrab;
 

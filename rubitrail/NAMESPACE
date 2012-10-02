@@ -1,2 +1,4 @@
+export(rubitDist)
+export(rubitFilter)
 export(rubitGlobal)
 export(rubitRead)

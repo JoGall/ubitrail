@@ -11,3 +11,5 @@ LazyLoad: yes
 Collate:
     'rubitrail.R'
     'Input.R'
+    'distanceCalcul.R'
+    'filter.R'

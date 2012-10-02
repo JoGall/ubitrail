@@ -33,6 +33,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
         ROIForGUI = -1;
 #endif
 
+    m_videoGrab.reset();
     cv::Mat bg;
     this->makeBG(bg);
     assert(!bg.empty());
