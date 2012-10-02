@@ -7,15 +7,34 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="release">
-				<Option output="Ubitrail" prefix_auto="1" extension_auto="1" />
+				<Option output="windowsBuild\bin\Ubitrail" prefix_auto="1" extension_auto="1" />
 				<Option object_output="\home\quentin\biology\Ubitrail\Ubitrail\.objs" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-fopenmp" />
+					<Add option="-mms-bitfields -IC:/gtkmm/include/gtkmm-2.4" />
+					<Add option="-Iheaders" />
+					<Add option="-IC:/gtkmm/lib/gtkmm-2.4/include -IC:/gtkmm/include/atkmm-1.6" />
+					<Add option="-IC:/gtkmm/include/giomm-2.4 -IC:/gtkmm/lib/giomm-2.4/include" />
+					<Add option="-IC:/gtkmm/include/pangomm-1.4 -IC:/gtkmm/lib/pangomm-1.4/include" />
+					<Add option="-IC:/gtkmm/include/gtk-2.0 -IC:/gtkmm/include/gdkmm-2.4 -IC:/gtkmm/lib/gdkmm-2.4/include" />
+					<Add option="-IC:/gtkmm/include/atk-1.0 -IC:/gtkmm/include/glibmm-2.4 -IC:/gtkmm/lib/glibmm-2.4/include" />
+					<Add option="-IC:/gtkmm/include/glib-2.0 -IC:/gtkmm/lib/glib-2.0/include -IC:/gtkmm/include/sigc++-2.0" />
+					<Add option="-IC:/gtkmm/lib/sigc++-2.0/include -IC:/gtkmm/include/cairomm-1.0 -IC:/gtkmm/lib/cairomm-1.0/include" />
+					<Add option="-IC:/gtkmm/include/pango-1.0 -IC:/gtkmm/include/cairo -IC:/gtkmm/include -IC:/gtkmm/include/freetype2" />
+					<Add option="-IC:/gtkmm/include/libpng14 -IC:/gtkmm/lib/gtk-2.0/include -IC:/gtkmm/include/gdk-pixbuf-2.0" />
+					<Add option="-IC:\opencv\build\include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-LC:/gtkmm/lib -Lc:/devel/dist/win32/libpng-1.4.3-1/lib -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-win32-2.0 -lcairomm-1.0 -lgdk-win32-2.0 -latk-1.0 -lgio-2.0 -lpangowin32-1.0 -lgdi32 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lpng14 -lpango-1.0 -lcairo -lgmodule-2.0 -lglibmm-2.4 -lgobject-2.0 -lsigc-2.0 -lgthread-2.0 -lglib-2.0 -lintl" />
+					<Add option="-fopenmp" />
+					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_core242.dll.a" />
+					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_highgui242.dll.a" />
+					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_imgproc242.dll.a" />
+					<Add library="..\..\..\..\..\..\..\opencv\build\x86\mingw\lib\libopencv_video242.dll.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -23,8 +42,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Makefile" />
-		<Unit filename="TODOlist" />
+		<Unit filename="Makefile">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="TODOlist">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="headers\Application.hpp" />
 		<Unit filename="headers\Area.hpp" />
 		<Unit filename="headers\AreaPreviewer.hpp" />
