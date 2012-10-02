@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1349185443 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\application.cpp
+	"Application.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\area.cpp
+	"Area.hpp"
+	"opencv2/highgui/highgui.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\areapreviewer.cpp
+	"AreaPreviewer.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\controlpanel.cpp
+	"ControlPanel.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\decorator.cpp
+	"Decorator.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\drawingarea.cpp
+	"DrawingArea.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\featureclassifier.cpp
+	"FeatureClassifier.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\foregroundextractor.cpp
+	"ForegroundExtractor.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\motionsensor.cpp
+	"MotionSensor.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\optionparser.cpp
+	"OptionParser.hpp"
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<cstdio>
+	<iostream>
+	<sstream>
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageareamaker.cpp
+	"PageAreaMaker.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageoutput.cpp
+	"PageOutput.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageprocesspars.cpp
+	"PageProcessPars.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pagevideoinput.cpp
+	"PageVideoInput.hpp"
+	<iostream>
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\processor.cpp
+	"Processor.hpp"
+	"ROIMaker.hpp"
+	"Area.hpp"
+	"VideoWriter.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\roimaker.cpp
+	"ROIMaker.hpp"
+	"opencv2/highgui/highgui.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\resultwriter.cpp
+	<assert.h>
+	"ResultWriter.hpp"
+	<time.h>
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\settingassistant.cpp
+	"SettingAssistant.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\tracker.cpp
+	"Tracker.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videograbber.cpp
+	"VideoGrabber.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videowriter.cpp
+	<sstream>
+	"VideoWriter.hpp"
+
+1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\main.cpp
+	"OptionParser.hpp"
+	"VideoGrabber.hpp"
+	"Processor.hpp"
+	"SettingAssistant.hpp"
+	"Application.hpp"
+

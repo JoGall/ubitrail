@@ -21,7 +21,10 @@
 
 Application::Application(Processor* pro,Options opts){
 
+
+
     this->set_title(PROGRAM_NAME " - Display");
+
     this->set_border_width(5);
     this->add(imageContainer);
     this->set_resizable(false);
@@ -38,6 +41,12 @@ Application::Application(Processor* pro,Options opts){
     m_controlPanel->show();
     imageContainer.show();
     this->show();
+
+#if defined WIN32 || defined WIN64
+this->set_icon_from_file("./windowsBuild/ubitrail.ico");
+m_controlPanel->set_icon_from_file("./windowsBuild/ubitrail.ico");
+#endif
+
 }
 
 Application::~Application(){
