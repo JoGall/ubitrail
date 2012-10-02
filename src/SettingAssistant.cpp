@@ -50,7 +50,7 @@ m_pageOutput(this,opts,videoGrab)
     m_pageAreaMaker.hideModeBoxes();
     this->signal_cancel().connect( sigc::mem_fun(*this, &SettingAssistant::on_quit));
 #if defined WIN32 || defined WIN64
-this->set_icon_from_file("./windowsBuild/ubitrail.ico");
+this->set_icon_from_file("../ubitrail.ico");
 #endif
 }
 

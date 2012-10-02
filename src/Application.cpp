@@ -43,8 +43,8 @@ Application::Application(Processor* pro,Options opts){
     this->show();
 
 #if defined WIN32 || defined WIN64
-this->set_icon_from_file("./windowsBuild/ubitrail.ico");
-m_controlPanel->set_icon_from_file("./windowsBuild/ubitrail.ico");
+this->set_icon_from_file("../ubitrail.ico");
+m_controlPanel->set_icon_from_file("../ubitrail.ico");
 #endif
 
 }
