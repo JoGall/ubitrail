@@ -130,7 +130,10 @@ $(LINUX_TARBALL): $(EXEC_NAME)
 
 R_DIR = rubitrail/
 R_SOURCES := $(shell ls $(R_DIR)/R/*.R )
-R_TGZ := $(cat $(R_DIR)/DESCRIPTION |grep ^Package  | cut --fields=2 --delimiter=: |sed s/\ //)_$(cat $(R_DIR)/DESCRIPTION |grep ^Version  | cut --fields=2 --delimiter=: |sed s/\ //)".tar.gz"
+N = $(shell cat $(R_DIR)/DESCRIPTION |grep ^Package | cut --fields=2 --delimiter=: |sed s/\ //g)
+V := $(shell cat $(R_DIR)/DESCRIPTION |grep ^Version  | cut --fields=2 --delimiter=: |sed s/\ //g)
+#R_TGZ := $(shell cat $(R_DIR)/DESCRIPTION |grep ^Package  | cut --fields=2 --delimiter=: |sed s/\ //)_$(cat $(R_DIR)/DESCRIPTION |grep ^Version  | cut --fields=2 --delimiter=: |sed s/\ //)".tar.gz"
+R_TGZ := $(N)_$(V).tar.gz
 vpath %.R  $(R_DIR)
 PACKAGE_NAME := rubitrail
 
@@ -141,7 +144,7 @@ R : $(R_TGZ)
 	R CMD INSTALL rubitrail*.tar.gz
 
 
-$(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
+$(R_TGZ) : $(R_SOURCES) 
 	@echo "Roxygeniting:"
 	@echo "library(roxygen2); roxygenise(\"$(PACKAGE_NAME)\",roxygen.dir=$(\"R_DIR\"),copy.package=F,unlink.target=F)" | R --vanilla
 	@echo "Building Package $(R_TGZ):"
@@ -151,6 +154,8 @@ $(R_TGZ) : $(R_SOURCES) $(ROXYGEN_FILE)
 
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 releaseAll: $(R_TGZ) $(LINUX_TARBALL)
-	make clean
-#	rsync -avP -e ssh * quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/all
-
+	@echo "uploading $(LINUX_TARBALL)"
+	rsync -avP -e ssh $(LINUX_TARBALL) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/linux
+	@echo "uploading $(R_TGZ)"
+	rsync -avP -e ssh $(R_TGZ) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/R
+#	make clean
