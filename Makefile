@@ -35,7 +35,7 @@ CPPFLAGS += $(shell pkg-config --cflags opencv)
 CPPFLAGS +=  -fopenmp
 CPPFLAGS += $(shell pkg-config --cflags gtkmm-2.4)
 CPPFLAGS += $(shell pkg-config --cflags gthread-2.0 glibmm-2.4)
-CPPFLAGS += -std=c++11
+#CPPFLAGS += -std=c++11
 
 LIBS = $(shell pkg-config  --libs opencv)
 LIBS +=  -fopenmp
