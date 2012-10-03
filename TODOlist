@@ -9,6 +9,7 @@ PROCESSING:
     @++!++ optimise decorator
     @++!++ check make bg so that it control if frames a readable.
     @++!++ decorator: write name of territories
+    @+!+ add header in order to use pango markup
 
 # => position relative to width only
 # => @+++!+ protection against overlaping area
@@ -31,6 +32,8 @@ BENCHMARCK:
 
 ASSISTANT:
 
+    @++!++ review sensitivity definition when inverted
+    @+!+ include links to user manual
     @! startProcessing = better button
     @+! estethic buttons
     @+! images
