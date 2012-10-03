@@ -36,7 +36,8 @@ m_spinButt_nLine(m_adju_nLine),
 m_lab_nDish("Number of circles: "),
 m_lab_nLine("Number of lines per circle: "),
 m_lab_mode("Area type: "),
-m_butt_maskPicker("Choose an image")
+m_butt_maskPicker("Choose an image"),
+m_butt_saveFrame("Save first frame")
 {
     //ctor
     m_parent = parent;
@@ -74,6 +75,7 @@ m_butt_maskPicker("Choose an image")
 
 
     m_modeVboxes[2].pack_start(m_butt_maskPicker,false,false);
+    m_modeVboxes[2].pack_start(m_butt_saveFrame,false,false);
     m_modeVboxes[2].pack_start(m_generatePreview2,false,false);
 
     m_mode.signal_changed().connect(sigc::mem_fun(*this,&PageAreaMaker::on_mode_changed) );
@@ -81,6 +83,7 @@ m_butt_maskPicker("Choose an image")
     m_generatePreview.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::makePreview) );
     m_generatePreview2.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::makePreview) );
     m_butt_maskPicker.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_loadFile_clicked));
+    m_butt_saveFrame.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_savefirstFrameForManualMask));
 }
 
 PageAreaMaker::~PageAreaMaker()
@@ -133,7 +136,6 @@ void PageAreaMaker::updateOpts(){
     m_generatePreview2.set_sensitive(m_opts->maskFile != "");
     m_parent->set_page_complete(*this,complete);
 }
-
 void PageAreaMaker::makePreview(){
     m_parent->set_page_complete(*this,false);
     Gtk::Main::iteration();
@@ -145,7 +147,6 @@ void PageAreaMaker::makePreview(){
     m_generatePreview.set_sensitive(true);
     m_parent->set_page_complete(*this,true);
 }
-
 void PageAreaMaker::on_loadFile_clicked(){
 
     Gtk::FileChooserDialog dialog("Please choose a file",
@@ -203,3 +204,45 @@ void PageAreaMaker::on_loadFile_clicked(){
   }
   this->updateOpts();
 }
+
+void PageAreaMaker::on_savefirstFrameForManualMask(){
+
+    Gtk::FileChooserDialog dialog("Save Image", Gtk::FILE_CHOOSER_ACTION_SAVE );
+
+    Gtk::FileFilter filter_image;
+    filter_image.set_name("Images");
+    filter_image.add_mime_type("image/jpeg");
+    dialog.add_filter(filter_image);
+
+
+	dialog.set_do_overwrite_confirmation(true);
+	dialog.set_current_name(".jpg");
+	dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+	dialog.add_button("Save", Gtk::RESPONSE_OK);
+	int result = dialog.run();
+
+	if(result==Gtk::RESPONSE_OK){
+        //        m_cstr->jpegName = dialog.get_filename();
+        //        m_cstr->done = false;
+        cv::Mat bg, accum;
+        for(unsigned int i=0;i < N_AVERAGED_FRAMES_BG; i++){
+            double t;
+            cv::Mat tmp;
+            m_videoGrab->getFrame(tmp,&t);
+            if(accum.empty())
+                tmp.convertTo(accum,CV_32F);
+            else
+                cv::accumulate(tmp,accum);
+        }
+        accum = accum/N_AVERAGED_FRAMES_BG;
+        accum.convertTo(bg,CV_8U);
+        cv::imwrite(dialog.get_filename(),bg);
+
+        m_videoGrab->reset();
+	}
+	else{
+	}
+//
+//    Gtk::Button::on_clicked();
+}
+

@@ -28,6 +28,7 @@ class PageAreaMaker: public Gtk::VBox
         void updateOpts();
         void makePreview();
         void on_loadFile_clicked();
+        void on_savefirstFrameForManualMask();
     private:
         Glib::ustring m_title;
         Gtk::Label m_description;
@@ -47,16 +48,13 @@ class PageAreaMaker: public Gtk::VBox
         Gtk::HBox m_hb_nDish, m_hb_nLine,m_hb_mode;
         Gtk::Label m_lab_nDish, m_lab_nLine,m_lab_mode;
 
-//        Gtk::Button generatePreview;
         Options* m_opts;
         VideoGrabber* m_videoGrab;
-//        Glib::RefPtr<Gdk::Window> preview
         AreaPreviewer m_areaPreview;
         std::string maskFileName;
         Gtk::Button m_butt_maskPicker;
-//        Glib::RefPtr<Gdk:: Pixbuf > m_pixbuf;
+        Gtk::Button  m_butt_saveFrame;
 
-//        Z
 };
 
 
