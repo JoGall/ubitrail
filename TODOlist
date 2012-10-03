@@ -8,6 +8,7 @@ PROCESSING:
     @+!+ threading : calculate numb of thread using available and optimal
     @++!++ optimise decorator
     @++!++ check make bg so that it control if frames a readable.
+    @++!++ decorator: write name of territories
 
 # => position relative to width only
 # => @+++!+ protection against overlaping area
@@ -44,6 +45,8 @@ DISPLAY:
 
     @++!++ About ubitrail
     @++! click on display -> area
+    @++!++ Save first picture in GUI
+    @++!++ save preview picture
     @+! estethic buttons
     @+! images
     @+! icon
@@ -65,6 +68,7 @@ General:
     @+++!+ HelpButton
     @+++!+ Version
     @++!++ErrorPrinter(VIDEO_WONT_INIT);
+    @++!++ Define territories in mask
 
 # => @+++! make a clean finishing mechanism
 # => @++!+ make gui start without assistant
