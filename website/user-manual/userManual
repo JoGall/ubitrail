@@ -1,0 +1,24 @@
+//User manual
+
+//1. Installation
+
+//2. How to use UbiTrail
+//  - input videos
+//  - make areas
+//  - choose parameters
+//  - record results
+//  - use UbiT from command line
+//  - use UbiT from R
+
+//3. How to use RUbiTrail to analyse data
+//  - read your data
+//  - remove noise
+//  - calculate distances, speeds, etc...
+//  - represent results
+
+//4. Examples
+//  - a simple example
+//  - a more complex example
+//  - e.g. speed/time spent left vs right
+
+//5. Troubleshooting (?)
