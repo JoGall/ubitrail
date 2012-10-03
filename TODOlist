@@ -22,6 +22,7 @@ PROCESSING:
 # => @++!+++  Exclude bigcontours
 
 BENCHMARCK:
+
     @+! interpolation type by display
     @++! GUI vs CL
     @++! see what hapend if the number of thread is down and number of area high
@@ -40,6 +41,7 @@ ASSISTANT:
 
 
 DISPLAY:
+
     @++!++ About ubitrail
     @++! click on display -> area
     @+! estethic buttons
@@ -69,3 +71,6 @@ General:
 
 
 //gui videopreviewr
+
+BUGS:
+	@+++!+++ program not closing properly when reaching end of video
