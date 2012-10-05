@@ -33,13 +33,10 @@ featureClassifier(options.MOGTrainingRounds),
 wasAmbiguous(false),
 isTrained(false)
 {
-    //ctor
-
 }
 
 Tracker::~Tracker()
 {
-    //dtor
 }
 
 

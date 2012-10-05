@@ -64,7 +64,7 @@ endif
 vpath %.cpp  src
 
 
-.PHONY: all clean test R linuxRelease install
+.PHONY: all clean  R linuxRelease install
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 all : $(EXEC_NAME)
 
@@ -141,11 +141,11 @@ PACKAGE_NAME := rubitrail
 R : $(R_TGZ) $(R_PDF)
 	@echo "installing rubitrail"
 	R CMD INSTALL rubitrail*.tar.gz
-	
+
 $(R_PDF) : $(R_SOURCES)
 	R CMD Rd2pdf --force rubitrail
-	
-$(R_TGZ) : $(R_SOURCES) 
+
+$(R_TGZ) : $(R_SOURCES)
 	@echo "Roxygeniting:"
 	@echo "library(roxygen2); roxygenise(\"$(PACKAGE_NAME)\",roxygen.dir=$(\"R_DIR\"),copy.package=F,unlink.target=F)" | R --vanilla
 	@echo "Building Package $(R_TGZ):"

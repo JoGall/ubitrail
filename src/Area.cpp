@@ -24,7 +24,7 @@
 Area::Area(){
 }
 
-Area::Area(cv::Rect ROI,cv::Mat bg,cv::Mat mask,int nLines):
+Area::Area(cv::Rect ROI,cv::Mat bg,cv::Mat mask,int nLines,bool useMaskForTerrit):
 m_ROI (ROI)
 {
 
@@ -32,7 +32,14 @@ m_ROI (ROI)
     surface = cv::countNonZero(m_mask);
 
     assert(nLines < 2);
-    if(nLines == 1)
+
+    //todel :
+    useMaskForTerrit = true;
+    if(useMaskForTerrit){
+        territMap = m_mask;
+    }
+
+    else if(nLines == 1)
         this->oneLineTerrit(bg);
     else
         cv::threshold(m_mask, territMap,0,1,cv::THRESH_BINARY);

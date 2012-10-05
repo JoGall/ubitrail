@@ -196,7 +196,7 @@ void ControlPanel::updateLabels(){
             tss<<std::setprecision (2)<<"("<<tmpAreaInfo[0]<<","<<tmpAreaInfo[1]<<")";
             m_lab_pos_res.set_text(tss.str());
             tss.str(std::string(""));
-            tss<<tmpAreaInfo[3];
+            tss<<(int)tmpAreaInfo[3];
             m_lab_territ_res.set_text(tss.str());
 
             m_progressTraining.hide();

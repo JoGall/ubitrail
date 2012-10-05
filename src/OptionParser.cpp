@@ -49,7 +49,7 @@ if (argc <=1 ){
 std::stringstream tss;
 
 char c=0;
-    while ((c = getopt (argc, argv, "GAhraipd:v:l:w:t:s:o:m:")) != -1){
+    while ((c = getopt (argc, argv, "GAhraipud:v:l:w:t:s:o:m:")) != -1){
         tss.str("");
          switch (c)
            {
@@ -76,6 +76,9 @@ char c=0;
         case 'p':
              opts.writeFirstPicture = true;
              break;
+        case 'u':
+            opts.usesMaskForTerrit = true;
+            break;
         case 'd':
              opts.nDishes = atoi(optarg);
              break;
@@ -172,6 +175,11 @@ bool OptionParser::checkOptions(){
         if(opts.writeFirstPicture){
             std::cerr<<"Wrong combinaison of arguments"<<std::endl
             <<"Option \"-p\"(save the first picture) requiers option \"-o\"(output directory) to have a value "<<std::endl;
+            valid = false;
+        }
+        if(opts.usesMaskForTerrit && opts.maskFile==""){
+            std::cerr<<"Wrong combinaison of arguments"<<std::endl
+            <<"Option \"-u\"(use mask file for territories) requiers option \"-m\"(path to the mask file) to be set"<<std::endl;
             valid = false;
         }
     }

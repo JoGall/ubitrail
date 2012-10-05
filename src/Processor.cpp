@@ -44,7 +44,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
     std::vector<std::string> labels = makeLabels(ROIs);
     trackers.resize(ROIs.size());
     for(unsigned int i = 0; i< ROIs.size(); i++){
-        Area area = Area(ROIs[i],bg(ROIs[i]),masks[i],m_options.nLinePerDishes);
+        Area area = Area(ROIs[i],bg(ROIs[i]),masks[i],m_options.nLinePerDishes,m_options.usesMaskForTerrit);
         trackers[i] = Tracker(area,labels[i],m_options);
     }
     m_decorator = Decorator(&trackers,bg.size());
@@ -66,6 +66,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
         m_decorator.getDecoratedFrame(deco);
         cv::imwrite(m_options.outDir+"/FirstPicture.jpg",deco);
     }
+
 }
 
 Processor::~Processor()

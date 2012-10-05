@@ -20,6 +20,7 @@ struct Options {
         bool hasGUI; // -G
         bool hasAssistant; // -A
         std::string maskFile; //-m
+        bool usesMaskForTerrit; // -u
 
         Options() :
         videoFile(""),
@@ -34,7 +35,8 @@ struct Options {
         allFrameOutput(false),
         writeFirstPicture(false),
         hasGUI(false),
-        hasAssistant(false)
+        hasAssistant(false),
+        usesMaskForTerrit(false)
         {
         }
 };

@@ -186,9 +186,15 @@ std::vector<cv::Vec3f> ROIMaker::bruteForceHough(cv::Mat img,double minRad, doub
 
 
 bool ROIMaker::ROIsFromImg(cv::Mat& img){
+
+
+    cv::Mat imgCpy;
+    img.copyTo(imgCpy);
+
     std::vector<std::vector<cv::Point> > contours;
-    cv::findContours(img, contours,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_SIMPLE);
-    img = cv::Scalar::all(0);
+    cv::findContours(imgCpy, contours,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_SIMPLE);
+//    imgCpy = cv::Scalar::all(0);
+//    img.copyTo(imgCpy);
 
     if(contours.size() == 0)
         return false;
@@ -199,10 +205,11 @@ bool ROIMaker::ROIsFromImg(cv::Mat& img){
     for(size_t i = 0; i < contours.size(); i++){
         assert(contours[i].size() > 4);
         cv::Rect boundRect =  cv::boundingRect(contours[i]);
-        cv::Mat miniMask(boundRect.height,boundRect.width,CV_8U,cv::Scalar(0));
-        cv::drawContours(miniMask,contours,i,cv::Scalar(255),-1,8,cv::noArray(),INT_MAX ,cv::Point(-boundRect.x,-boundRect.y));
+        cv::Mat miniMask(boundRect.height,boundRect.width,CV_8U,cv::Scalar(255));
+        cv::drawContours(miniMask,contours,i,cv::Scalar(0),-1,8,cv::noArray(),INT_MAX ,cv::Point(-boundRect.x,-boundRect.y));
+        imgCpy = img(boundRect) - miniMask;
         m_ROIs[i] = boundRect;
-        miniMask.copyTo(m_masks[i]);
+        imgCpy.copyTo(m_masks[i]);
     }
     return true;
 }

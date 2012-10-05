@@ -9,7 +9,8 @@ PROCESSING:
     @++!++ optimise decorator
     @++!++ check make bg so that it control if frames a readable.
     @++!++ decorator: write name of territories
-    @+!+ add header in order to use pango markup
+ => @++!++ tell how many territ are present in the overview
+ => @++!++ uses mask to deffine territories.
 
 # => position relative to width only
 # => @+++!+ protection against overlaping area
@@ -31,7 +32,7 @@ BENCHMARCK:
 
 
 ASSISTANT:
-
+    @+!+ add header in order to use pango markup
     @+++!++ remember path
     @++!++ review sensitivity definition when inverted
     @+!+ include links to user manual
@@ -49,7 +50,7 @@ DISPLAY:
 
     @++!++ About ubitrail
     @++! click on display -> area
-    @++!++ Save first picture in GUI
+
     @++!++ save preview picture
     @+! estethic buttons
     @+! images
@@ -57,6 +58,7 @@ DISPLAY:
     @+! tooltips
     @+! have a "do not decorate" option
 
+# => @++!++ Save first picture in GUI
 # => @+! "open result folder"
 # => @++!+ percentage of training
 # => @++! rational display size

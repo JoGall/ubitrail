@@ -24,8 +24,9 @@ class Area
          * @param bg a background image that can be used to define territories.
          * @param mask a binary matrix. Non-zero values correspond to active regions.
          * @param nLines the number of lines to detect in each regions. Each line delimitates territories from each other.
+         * @param useMaskForTerrit aboolean being true if the mask should be used for territories.
          */
-        Area(cv::Rect ROI,cv::Mat bg,cv::Mat mask,int nLines);
+        Area(cv::Rect ROI,cv::Mat bg,cv::Mat mask,int nLines,bool useMaskForTerrit);
 
         virtual ~Area();
 
@@ -34,7 +35,7 @@ class Area
 
         int inWhichTerritIsPoint(cv::Point2f p){
             int ter;
-            ter = (int) territMap.at<char>(p);
+            ter = (int) territMap.at<uchar>(p);
             return ter;
         }
 
@@ -47,6 +48,7 @@ class Area
         cv::Mat territMap;
         cv::Mat m_mask;
         cv::Rect m_ROI;
+        unsigned int n_territ;
 
 };
 
