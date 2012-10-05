@@ -41,6 +41,7 @@ ASSISTANT:
     @+! images
     @+! icon
     @+! tooltips
+    @! allow user to go forward from experimental definition screen with 'Default' area type without having to first change area type
 
  # => @+++! Quiting option
  # => @+++!+++ Previewer
