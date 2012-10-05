@@ -26,9 +26,9 @@ Decorator::Decorator(){
 
 Decorator::Decorator(std::vector<Tracker>* trackers, cv::Size imgSize):
 pos(trackers->size()),
-posIsValid(trackers->size()),
-staticOverlay_BGR(3),
-frameCopy_BGR(3)
+posIsValid(trackers->size())
+//staticOverlay_BGR(3),
+//frameCopy_BGR(3)
 {
     //ctor
     m_trackers = new std::vector<Tracker>;
@@ -48,18 +48,20 @@ Decorator::~Decorator()
 }
 
 void Decorator::getDecoratedFrame(cv::Mat& frame){
-    cv::merge(frameCopy_BGR,frame);
-//    for(unsigned int i = 0; i<pos.size();i++){
-//        if(posIsValid[i]){
-//            cv::circle(frame, pos[i], 3, cv::Scalar(255,0,0),3);
-//            cv::circle(frame, pos[i], 2, cv::Scalar(0,255,255),2);
-//        }
-//        else if (pos[i].x > -1){
-//            cv::circle(frame, pos[i], 3, cv::Scalar(0,255,255),3);
-//            cv::circle(frame, pos[i], 2, cv::Scalar(0,0,255),2);
-//        }
+    buff.copyTo(frame);
+//    cv::merge(frameCopy_BGR,frame);
+
+    for(unsigned int i = 0; i<pos.size();i++){
+        if(posIsValid[i]){
+            cv::circle(frame, pos[i], 3, cv::Scalar(255,0,0),3);
+            cv::circle(frame, pos[i], 2, cv::Scalar(0,255,255),2);
+        }
+        else if (pos[i].x > -1){
+            cv::circle(frame, pos[i], 3, cv::Scalar(0,255,255),3);
+            cv::circle(frame, pos[i], 2, cv::Scalar(0,0,255),2);
+        }
 //
-//    }
+    }
 
 }
 
@@ -83,34 +85,37 @@ void Decorator::makeStaticOverlay(cv::Size imgSize){
         cv::Point ori((*m_trackers)[i].getROI().tl().x +2,(*m_trackers)[i].getROI().br().y - 2);
         cv::putText(staticOverlay, (*m_trackers)[i].getLabel(),ori , cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(125,255,125), 2,CV_AA,false );
 
-        cv::cvtColor(staticOverlay,staticOverlayMask,CV_BGR2GRAY );
-        cv::split(staticOverlay,staticOverlay_BGR);
+        staticOverlay.copyTo(stat);
+//        cv::cvtColor(staticOverlay,staticOverlayMask,CV_BGR2GRAY );
+//        cv::split(staticOverlay,staticOverlay_BGR);
 
     }
 }
 
 
 void Decorator::newFrame(cv::Mat& frame){
-    cv::split(frame,frameCopy_BGR);
-    unsigned int nc=frame.cols;
-    unsigned int nl=frame.rows;
-    int st = staticOverlayMask.step;
-    int es = staticOverlayMask.elemSize();
-
-        for(unsigned int j=0; j<nl;j++){
-            for(unsigned int i=0; i<nc;i++){
-                for(unsigned int k=0; k<3;k++){
-
-                if(*(staticOverlayMask.data+j*st+i*es)>0){
-
-                    double transp = DECORATOR_TRANSPAR ;// * (1-(255.0 - val)/255.0) ;
-                    *(frameCopy_BGR[k].data+j*st+i*es) =
-                        *(staticOverlay_BGR[k].data+j*st+i*es) * (1.0 - transp)
-                        + *(frameCopy_BGR[k].data+j*st+i*es) * transp ;
-                }
-            }
-        }
-    }
+//    cv::split(frame,frameCopy_BGR);
+frame.copyTo(buff);
+buff=buff+stat;
+//    unsigned int nc=frame.cols;
+//    unsigned int nl=frame.rows;
+//    int st = staticOverlayMask.step;
+//    int es = staticOverlayMask.elemSize();
+//
+//        for(unsigned int j=0; j<nl;j++){
+//            for(unsigned int i=0; i<nc;i++){
+//                for(unsigned int k=0; k<3;k++){
+//
+//                if(*(staticOverlayMask.data+j*st+i*es)>0){
+//
+//                    double transp = DECORATOR_TRANSPAR ;// * (1-(255.0 - val)/255.0) ;
+//                    *(frameCopy_BGR[k].data+j*st+i*es) =
+//                        *(staticOverlay_BGR[k].data+j*st+i*es) * (1.0 - transp)
+//                        + *(frameCopy_BGR[k].data+j*st+i*es) * transp ;
+//                }
+//            }
+//        }
+//    }
 }
 
 void Decorator::plot(int i){

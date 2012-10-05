@@ -31,6 +31,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
 #ifdef WITH_GUI
     if(m_hasGUI)
         ROIForGUI = -1;
+    NFramesSpeedAssess = 0;
 #endif
 
     m_videoGrab.reset();
@@ -90,8 +91,7 @@ void Processor::track(){
             #pragma omp master
             {
                 if(first){
-                    if(!m_videoGrab.getFrame(frame,&time))
-                        end = true;
+                    end  = !m_videoGrab.getFrame(frame,&time);
                 }
             }
             #pragma omp for nowait schedule(dynamic)
@@ -105,7 +105,7 @@ void Processor::track(){
             #pragma omp master
             {
                 if(!first){
-                    m_videoGrab.getFrame(frame,&time);
+                    end  = !m_videoGrab.getFrame(frame,&time);
                 }
                 if(!end){
                     m_decorator.newFrame(frame);
@@ -123,8 +123,8 @@ void Processor::track(){
                 #pragma omp section
                 {
 
-/*GUI*/
-#ifdef WITH_GUI
+    /*GUI*/
+    #ifdef WITH_GUI
     if(m_hasGUI){
                     {
 //                Glib::Threads::Mutex::Lock lock (m_mutexDeco);
@@ -138,6 +138,7 @@ void Processor::track(){
                 Glib::Mutex::Lock lock (m_mutexXYTrTe);
                 this->updateXYTrainedTerrit();
                     }
+    NFramesSpeedAssess++;
     }
     else
         m_decorator.getDecoratedFrame(deco);

@@ -80,8 +80,16 @@ class Processor
         bool getIsFinished(){
             return end;
         }
-        double getProgress(){
+        float getProgress(){
             return m_videoGrab.getProgress();
+        }
+        int getSpeed(){
+            gettimeofday(&endSpeedAssess, NULL);
+            long duration = (long)((endSpeedAssess.tv_sec  - startSpeedAssess.tv_sec) * 1000 + (long)(endSpeedAssess.tv_usec - startSpeedAssess.tv_usec)/1000.0) + 0.5;
+            gettimeofday(&startSpeedAssess, NULL);
+            int speed = (NFramesSpeedAssess*1000)/duration;
+            NFramesSpeedAssess = 0;
+            return speed;
         }
 
         long getTime(){
@@ -133,7 +141,7 @@ class Processor
         Decorator m_decorator;
         VideoWriter m_videoWriter;
         cv::Mat deco;
-        timeval startT,endT;
+        timeval startT,endT, startSpeedAssess,endSpeedAssess;
         bool refuseToSendDecoratedFrame;
         bool end;
 
@@ -143,6 +151,7 @@ class Processor
         int ROIForGUI;
         float m_XYTrTe[4];
         int m_WHXY_ROI[4];
+        int NFramesSpeedAssess;
         bool m_hasGUI;
 #endif
 };

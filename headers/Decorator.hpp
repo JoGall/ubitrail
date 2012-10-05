@@ -20,10 +20,11 @@ class Decorator
         void makeStaticOverlay(cv::Size imgSize);
     private:
         std::vector<Tracker> *m_trackers;
-        cv::Mat staticOverlayMask;
+//        cv::Mat staticOverlayMask, buff,stat;
+        cv::Mat buff,stat;
         std::vector<cv::Point2f > pos;
         std::vector<bool> posIsValid;
-        std::vector< cv::Mat>staticOverlay_BGR,frameCopy_BGR;
+//        std::vector< cv::Mat>staticOverlay_BGR,frameCopy_BGR;
 
 };
 

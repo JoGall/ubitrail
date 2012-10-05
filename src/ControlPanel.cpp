@@ -42,7 +42,7 @@ finished(false)
     this->set_title(PROGRAM_NAME " - Panel");
     this->set_default_size(300,700);
 //    this->set_resizable(false);
-this->set_deletable(false);
+    this->set_deletable(false);
     this->set_border_width(5);
 
     m_panel.set_homogeneous(false);
@@ -71,6 +71,7 @@ this->set_deletable(false);
     m_hb_gobalSep.pack_start(m_sep_gobal,true,true);
 
     m_info_global.pack_start(m_progressBar,false,false);
+    m_info_global.pack_start(m_lab_processingSpeed,false,true);
 
 
     m_info_area.pack_start(m_hb_areaSep,false,true);
@@ -155,6 +156,7 @@ std::vector<std::string> ControlPanel::sortAlpha(std::vector<std::string> sortTh
 bool ControlPanel::on_updateProgress(){
 
     double progress = m_pro->getProgress();
+
     if(progress >= 0)
         m_progressBar.set_fraction(progress);
     else
@@ -162,6 +164,8 @@ bool ControlPanel::on_updateProgress(){
 
     std::stringstream tss;
     long timeS = (long)m_pro->getTime() / 1000;
+
+    int FPS = m_pro->getSpeed();
 
     if(finished){
         if(timeS < 60)
@@ -178,7 +182,14 @@ bool ControlPanel::on_updateProgress(){
         else
             tss<<(int)(progress*100)<<"\% in "<<timeS/60<<"min";
 
+
         m_progressBar.set_text(tss.str());
+
+        tss.str("");
+
+        tss<<"Processing speed: "<<FPS<<"FPS";
+
+        m_lab_processingSpeed.set_text(tss.str());
         return true;
     }
 }
