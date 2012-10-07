@@ -84,6 +84,7 @@ m_butt_saveFrame("Save first frame")
     m_generatePreview2.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::makePreview) );
     m_butt_maskPicker.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_loadFile_clicked));
     m_butt_saveFrame.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_savefirstFrameForManualMask));
+    m_mode.set_active(-1);
 }
 
 PageAreaMaker::~PageAreaMaker()
@@ -95,7 +96,7 @@ void PageAreaMaker::on_mode_changed(){
 //    get_active_text ()
     this->hideModeBoxes();
     updateOpts();
-    m_videoGrab->getFPS();
+    m_videoGrab->getFPS(); //?
 }
 void PageAreaMaker::hideModeBoxes(){
 
