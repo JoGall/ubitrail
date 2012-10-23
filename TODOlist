@@ -9,6 +9,7 @@ PROCESSING:
     @++!++ optimise decorator
     @++!++ check make bg so that it control if frames a readable.
     @++!++ decorator: write name of territories
+    @+!+ error messages: return visible errors from command line usage (help currently printed last, so cannot see error message in the terminal without scrolling up)
  => @++!++ tell how many territ are present in the overview
  => @++!++ uses mask to deffine territories.
 
