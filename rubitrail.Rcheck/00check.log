@@ -1,0 +1,151 @@
+* using log directory ‘/home/quentin/Cpp/Ubitrail/rubitrail.Rcheck’
+* using R version 2.15.1 (2012-06-22)
+* using platform: x86_64-unknown-linux-gnu (64-bit)
+* using session charset: UTF-8
+* checking for file ‘rubitrail/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘rubitrail’ version ‘0.1’
+* checking CRAN incoming feasibility ... NOTE
+New submission
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking whether package ‘rubitrail’ can be installed ... OK
+* checking installed package size ... NOTE
+  installed size is  6.1Mb
+  sub-directories of 1Mb or more:
+    data   6.0Mb
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Subdirectory ‘inst’ contains no files.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+ubitMetaData: warning in scan(FILE, what = "character", nline = 1):
+  partial argument match of 'nline' to 'nlines'
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... WARNING
+Missing link(s) in documentation object ‘/home/quentin/Cpp/Ubitrail/rubitrail/man/ubitData.Rd’:
+  ‘ubitLoad’
+
+Missing link(s) in documentation object ‘/home/quentin/Cpp/Ubitrail/rubitrail/man/ubitMetaData.Rd’:
+  ‘ubitLoad’
+
+Missing link(s) in documentation object ‘/home/quentin/Cpp/Ubitrail/rubitrail/man/ubitParseDataToList.Rd’:
+  ‘ubitLoad’
+
+See the information in section ‘Cross-references’ of the ‘Writing R
+Extensions’ manual.
+
+* checking for missing documentation entries ... WARNING
+Undocumented data sets:
+  ‘weevils’
+All user-level objects in a package should have documentation entries.
+See the chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'ubitLoadFile'
+  ‘verbose’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See the chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... WARNING
+Warning: parse error in file ‘rubitrail-Ex.R’:
+41: unexpected symbol
+107: w15 <- lapply(weevils,ubitMedianFilter,k=15)
+108: w101 <- lapply(weevils,ubitMedianF      ilter
+                                            ^
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... WARNING
+  
+  Note: significantly better compression could be obtained
+        by using R CMD build --resave-data
+              old_size new_size compress
+  weevils.rda    5.9Mb    4.3Mb       xz
+* checking examples ... ERROR
+Running examples in ‘rubitrail-Ex.R’ failed
+The error most likely occurred in:
+
+> ### Name: ubitMedianFilter
+> ### Title: Apply a running median filter on an an area matrix.
+> ### Aliases: ubitMedianFilter
+> 
+> ### ** Examples
+> 
+> ### Apply to a list of area matrix with different k values:
+> data(weevils)
+> w15 <- lapply(weevils,ubitMedianFilter,k=15)
+Warning in FUN(X[[1L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[1L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[2L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[2L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[3L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[3L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[4L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[4L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[5L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[5L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[6L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[6L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[7L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[7L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[8L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[8L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[9L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[9L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[10L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[10L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[11L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[11L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+Warning in FUN(X[[12L]], ...) :
+  This data matrix has already been filtered. You are not working on raw data.
+Warning in FUN(X[[12L]], ...) :
+  This data has been interpolated before smoothing. This will hardly remove outliers.
+> w101 <- lapply(weevils,ubitMedianF	ilter,k=101)
+Error: unexpected symbol in "w101 <- lapply(weevils,ubitMedianF      ilter"
+Execution halted

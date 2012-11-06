@@ -193,8 +193,6 @@ bool ROIMaker::ROIsFromImg(cv::Mat& img){
 
     std::vector<std::vector<cv::Point> > contours;
     cv::findContours(imgCpy, contours,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_SIMPLE);
-//    imgCpy = cv::Scalar::all(0);
-//    img.copyTo(imgCpy);
 
     if(contours.size() == 0)
         return false;

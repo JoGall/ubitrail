@@ -77,18 +77,14 @@ void Decorator::makeStaticOverlay(cv::Size imgSize){
             cv::Mat tmp;
             std::vector<std::vector<cv::Point> > conts;
             (*m_trackers)[i].getTerritMap().copyTo(tmp);
-            cv::inRange(tmp, j,j, tmp);
+            tmp = tmp ==j;
             cv::findContours(tmp,conts,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_NONE);
             cv::drawContours(staticOverlay, conts,0, cv::Scalar((double)(j-1)*255/max,0,255-(double)(j-1)*255/max), 2, CV_AA,cv::noArray(),INT_MAX,(*m_trackers)[i].getROI().tl());
         }
 
         cv::Point ori((*m_trackers)[i].getROI().tl().x +2,(*m_trackers)[i].getROI().br().y - 2);
         cv::putText(staticOverlay, (*m_trackers)[i].getLabel(),ori , cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(125,255,125), 2,CV_AA,false );
-
         staticOverlay.copyTo(stat);
-//        cv::cvtColor(staticOverlay,staticOverlayMask,CV_BGR2GRAY );
-//        cv::split(staticOverlay,staticOverlay_BGR);
-
     }
 }
 

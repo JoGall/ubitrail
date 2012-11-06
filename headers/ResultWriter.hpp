@@ -33,7 +33,7 @@ class ResultWriter
          * @param trackers a vector of Tracker objects.
          * @param options an Options structure.
          */
-        ResultWriter(std::vector<Tracker>* trackers, Options& options);
+        ResultWriter(std::vector<Tracker>* trackers, Options& options,int width,int height);
 
         virtual ~ResultWriter();
 
@@ -64,6 +64,8 @@ class ResultWriter
         bool toSTD;
         std::vector<Tracker> *m_trackers;
         std::stringstream* tss;
+        int m_width;
+        int m_height;
 };
 
 #endif // RESULTWRITER_H

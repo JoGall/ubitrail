@@ -26,10 +26,10 @@ m_description(PAGE_OUTPUT_DESCRIPTION),
 m_butt_pickFolder(" Choose a folder"),
 m_butt_start("Start Processing"),
 m_currentFolderName(PAGE_OUTPUT_DESCRIPTION_NO_FILE),
-m_checkB_hasTextFile("Reccord positions over time"),
+m_checkB_hasTextFile("Record positions over time"),
 m_checkB_hasFirstPicture("Save first frame"),
-m_checkB_hasIndivVideo("Reccord marked global video"),
-m_checkB_hasGlobal("Reccord a marked video for each area")
+m_checkB_hasIndivVideo("Record marked global video"),
+m_checkB_hasGlobal("Record a marked video for each area")
 {
     m_parent = parent;
     m_opts = opts;
@@ -78,7 +78,7 @@ void PageOutput::on_pickFolder(){
     dialog.add_button("Select", Gtk::RESPONSE_OK);
 
     int result = dialog.run();
-std::stringstream tss;
+    std::stringstream tss;
     //Handle the response:
     switch(result){
         case(Gtk::RESPONSE_OK):
@@ -96,11 +96,16 @@ std::stringstream tss;
 }
 
 void PageOutput::on_update(){
+
         m_opts->resultFile = m_checkB_hasTextFile.get_active();
         m_opts->allFrameOutput = m_checkB_hasIndivVideo.get_active();
         m_opts->videosOutput = m_checkB_hasGlobal.get_active();
         m_opts->writeFirstPicture = m_checkB_hasFirstPicture.get_active();
 
+        if(!m_opts->resultFile && !m_opts->allFrameOutput && !m_opts->allFrameOutput && !m_opts->writeFirstPicture)
+            m_butt_start.set_sensitive(true);
+        else if(m_opts->outDir == "")
+            m_butt_start.set_sensitive(false);
 }
 
 

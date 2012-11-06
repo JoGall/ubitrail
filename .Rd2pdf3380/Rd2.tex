@@ -1,0 +1,34 @@
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[latin1]{inputenc} % @SET ENCODING@
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `rubitrail'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{rubitrail, A package to analyse the output of Ubitrail, an open-source
+video tracking program for analysis of animal motion.}
+\item[Version]\AsIs{0.1}
+\item[Date]\AsIs{2012-10-26}
+\item[Author]\AsIs{Quentin Geissmann}
+\item[Maintainer]\AsIs{Quentin Geissmann }\email{qgeissmann@gmail.com}\AsIs{}
+\item[Description]\AsIs{This package provides tools to read, analyse and represent outuput
+data from Ubitrail. Used in combinaison, Ubitrail and rubitrail provide a
+complete toolkit to quantify sigle animal motion in arenas. Please visit
+Ubitrail's website for complete documentation and tutorials.}
+\item[License]\AsIs{GPL (>=3.0)}
+\item[Depends]\AsIs{
+parallel}
+\item[LazyLoad]\AsIs{TRUE}
+\item[Collate]\AsIs{
+'Input.R'}
+\item[URL]\AsIs{}\url{http://ubitrail.sourceforge.net/}\AsIs{}
+\end{description}
+\Rdcontents{\R{} topics documented:}

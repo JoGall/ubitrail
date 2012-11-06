@@ -26,9 +26,11 @@ ResultWriter::ResultWriter(){
 
 }
 //
-ResultWriter::ResultWriter(std::vector<Tracker>* trackers, Options& options):
+ResultWriter::ResultWriter(std::vector<Tracker>* trackers, Options& options,int width,int height):
 m_options(options),
-toSTD(false)
+toSTD(false),
+m_width(width),
+m_height(height)
 {
     if(m_options.resultFile){
         std::string tmp = m_options.outDir+"/Result.csv";
@@ -82,7 +84,8 @@ void ResultWriter::flush(){
 
 void ResultWriter::writeResultRow(std::string label, int territory, float X, float Y, float t, float L, int i){
 //
-    tss[i]<<"\'"<<label<<"\'"<<",";
+//    tss[i]<<"\'"<<label<<"\'"<<",";
+    tss[i]<<label<<",";
     tss[i]<<territory<<",";
     tss[i]<<std::setprecision(3)<<X<<",";
     tss[i]<<std::setprecision(3)<<Y<<",";
@@ -132,6 +135,10 @@ void ResultWriter::writeHead(){
                         <<"Number_of_Training_Round=\""<<m_options.MOGTrainingRounds<<"\""
                         <<","
                         <<"Output_Diretory=\""<<m_options.outDir<<"\""
+                        <<","
+                        <<"Width=\""<<m_width<<"\""
+                        <<","
+                        <<"Height=\""<<m_height<<"\""
                     <<")"
                 <<","
                 <<"Areas="

@@ -6,7 +6,7 @@
 //#define MEAN_NOISE 128
 //#define SIGMA_NOISE 128
 //#define ATTENUATE_NOISE_SIGMA 1
-//#define AGENT_COLOUR cv::Scalar(69,120,180)
+//#define AGENT_COLOUR cv::Scalar(40,125,200)
 //#define AGENT_RAD 3
 //#define TEMPORAL_BLUR 0.99
 

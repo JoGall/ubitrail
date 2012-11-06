@@ -57,7 +57,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
         deco.copyTo(*preview);
     }
     else{
-        m_resultWriter = new ResultWriter(&trackers,m_options);
+        m_resultWriter = new ResultWriter(&trackers,m_options,bg.cols,bg.rows);
         m_videoWriter = VideoWriter(&trackers,m_options,bg.size(),m_videoGrab.getFPS());
     }
 

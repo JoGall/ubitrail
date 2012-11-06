@@ -6,13 +6,14 @@ PROCESSING:
     @++! Find a way to write videos with dynamic framerate
     @++!++ Save mask
     @+!+ threading : calculate numb of thread using available and optimal
-    @++!++ optimise decorator
+
     @++!++ check make bg so that it control if frames a readable.
     @++!++ decorator: write name of territories
     @+!+ error messages: return visible errors from command line usage (help currently printed last, so cannot see error message in the terminal without scrolling up)
- => @++!++ tell how many territ are present in the overview
- => @++!++ uses mask to deffine territories.
 
+ => @++!++ tell how many territ are present in the overview
+# => @++!++ uses mask to define territories.
+# => @++!++ optimise decorator
 # => position relative to width only
 # => @+++!+ protection against overlaping area
 # => @++!+++ Area from file (png)
@@ -43,7 +44,7 @@ ASSISTANT:
     @+! icon
     @+! tooltips
     @! allow user to go forward from experimental definition screen with 'Default' area type without having to first change area type
-
+# => MAKE ANOTHER QUIT WHEN PROCESSOR IS FINISHED
  # => @+++! Quiting option
  # => @+++!+++ Previewer
 
@@ -77,6 +78,8 @@ General:
     @+++!+ Version
     @++!++ErrorPrinter(VIDEO_WONT_INIT);
     @++!++ Define territories in mask
+    @+!+ print number of territory in output matrix;
+    @+!+ print source of mask...
 
 # => @+++! make a clean finishing mechanism
 # => @++!+ make gui start without assistant
