@@ -80,6 +80,7 @@ General:
     @++!++ Define territories in mask
     @+!+ print number of territory in output matrix;
     @+!+ print source of mask...
+    @+!+ error closing GUI when using mask ["(ubitrail:3363): Gtk-CRITICAL **: IA__gtk_assistant_set_page_complete: assertion `child != NULL' failed"]
 
 # => @+++! make a clean finishing mechanism
 # => @++!+ make gui start without assistant
