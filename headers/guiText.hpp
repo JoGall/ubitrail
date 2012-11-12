@@ -4,7 +4,9 @@
 
 
 #define PAGE_VIDEO_INPUT_TITLE "Video Input"
-#define PAGE_VIDEO_INPUT_DESCRIPTION "DESCRIPTION TODO ..."
+#define PAGE_VIDEO_INPUT_DESCRIPTION "Select a .avi video file to analyse.  Most common video formats are \n\
+compatible (a full list is available at http:\/\/opencv.willowgarage.com\/wiki\/VideoCodecs).  The K-Lite \n\
+codec pack (available at http:\/\/codecguide.com\/) can be a useful tool to update your system codecs."
 #define PAGE_VIDEO_INPUT_LOAD_FILE_BUTTON "Pick a file"
 #define PAGE_VIDEO_INPUT_DESCRIPTION_NO_FILE "No file selected yet"
 
