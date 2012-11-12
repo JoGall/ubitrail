@@ -9,6 +9,9 @@
 
   \item{meta}{a list of metadata.}
 }
+\value{
+  A list of numerical matrices.
+}
 \description{
   This function is used to combine metadata and data into a
   list of matrices.

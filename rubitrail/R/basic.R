@@ -13,8 +13,9 @@
 #' @param nThread a positive integer. The number of threads to be created for parallel processing.
 #' @param verbose a bolean. If TRUE, the function will print messaged at every steps.
 #' @note The returned list contains a numerical marix for each area.
-#' The attributes of list contain metadata.
+#' The attributes of list contain metadata and additionnal information is present in each the the attributes of each matrix.
 #' Each matrix in the list is given attributes about the area it represents.
+#' @return A list of numerical matrices. Each matrix correspond to an area.
 #' @examples
 #' data(weevils)
 #' ###See general metadata:

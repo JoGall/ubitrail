@@ -10,6 +10,9 @@
   \item{k}{an integer specifing the size of the smoothing
   window. \emph{it must be odd}.}
 }
+\value{
+  A numerical matrix of the same dimention as m.
+}
 \description{
   This function is used to eliminate outliers from an area
   matrix.
@@ -23,7 +26,7 @@
 ### Apply to a list of area matrix with different k values:
 data(weevils)
 w15 <- lapply(weevils,ubitMedianFilter,k=15)
-w101 <- lapply(weevils,ubitMedianF	ilter,k=101)
+w101 <- lapply(weevils,ubitMedianFilter,k=101)
 ### See k impacts on smoothing:
 ##Raw:
 plot(weevils[[1]][1:2000,'X'] ~ weevils[[1]][1:2000,'time'],type='l',col='blue')

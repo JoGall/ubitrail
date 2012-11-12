@@ -4,7 +4,7 @@ NULL
 #' This function is used to eliminate outliers from an area matrix.
 #' @param m a numerical matrix corresponding to an area.
 #' @param k an integer specifing the size of the smoothing window. \emph{it must be odd}.
-#' @value A numerical matrix of the same dimention as m.
+#' @return A numerical matrix of the same dimention as m.
 #' @note 
 #' A read is written by Ubitrail every time an agent is detected. Therefore, a read contains information
 #' about area, territory, position and time.
@@ -13,7 +13,7 @@ NULL
 #' ### Apply to a list of area matrix with different k values:
 #' data(weevils)
 #' w15 <- lapply(weevils,ubitMedianFilter,k=15)
-#' w101 <- lapply(weevils,ubitMedianF	ilter,k=101)
+#' w101 <- lapply(weevils,ubitMedianFilter,k=101)
 #' ### See k impacts on smoothing:
 #' ##Raw:
 #' plot(weevils[[1]][1:2000,'X'] ~ weevils[[1]][1:2000,'time'],type='l',col='blue')
@@ -25,7 +25,6 @@ NULL
 # @seealso \code{\link{ubitLoad}} to read data from a CSV-like result file.
 # @seealso \code{\link{ubitInterpolate}} to get a regular sampling (after filtering).
 #' @export
-
 ubitMedianFilter <- function(m,k=15){
 	if(!any(class(m) == "matrix"))
 		stop("This function works with a matrix. If you have a a list of matrices, use lapply to call this function on each element of the list. See examples for details.")

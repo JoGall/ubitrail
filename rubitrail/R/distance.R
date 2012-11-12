@@ -3,10 +3,19 @@
 #' This function calculates distance between the position at any read and the position at the next read.
 #' This is achived by using Pythagora theorem. 
 #' @param m an area matrix.
-#' @value a new area matrix.
-# @note TODO
+#' @return A new area matrix.
+#  @note TODO
 #' @examples
 #' print("TODO")
+#' data(weevils)
+#' w15 <- lapply(weevils,ubitMedianFilter,k=15)
+#' w15_intp <- lapply(w15,ubitInterpolate,h=10)
+#' w15_Dist <- lapply(w15_intp,ubitCalcDistance)
+#' ##Histogram of instantaneous speed (pix/sec)
+#' hist(w15_Dist[[1]][,'Distance']*10,nclass=100)
+#' ##Histogram of instantaneous speed (pix/sec)
+#' plot(cumsum(w15_Dist[[1]][,'Distance']/6400) ~ {w15_Dist[[1]][,'time']/60000},type='l',ylab = "Cumul. distance (m)",xlab = "time (min)")
+###  for(i in names(w15_Dist)) if(nrow(w15_Dist[[i]]) > 0) lines(cumsum(w15_Dist[[i]][,'Distance']/6400) ~ {w15_Dist[[i]][,'time']/60000},col=i)
 # ubiMetaData('Results.csv')
 #' @export
 ubitCalcDistance <- function(m){

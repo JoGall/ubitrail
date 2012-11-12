@@ -20,7 +20,11 @@
   write a function to parse the meta data.
 }
 \examples{
-print("TODO")
+\dontrun{
+l <- ubitLoadFile('Results.csv')
+attributes(l)
+summary(l)
+}
 }
 \seealso{
   \code{\link{ubitMetaData}} to get only meta data from a

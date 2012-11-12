@@ -34,6 +34,10 @@
   \item{verbose}{a bolean. If TRUE, the function will print
   messaged at every steps.}
 }
+\value{
+  A list of numerical matrices. Each matrix correspond to
+  an area.
+}
 \description{
   This function will load a result file as a list of
   matrices. Then, the data in each matrix is smoothed,
@@ -43,9 +47,10 @@
 }
 \note{
   The returned list contains a numerical marix for each
-  area. The attributes of list contain metadata. Each
-  matrix in the list is given attributes about the area it
-  represents.
+  area. The attributes of list contain metadata and
+  additionnal information is present in each the the
+  attributes of each matrix. Each matrix in the list is
+  given attributes about the area it represents.
 
   processing large data can be quite long. If experiment
   your was long and contained multiple active areas, you
