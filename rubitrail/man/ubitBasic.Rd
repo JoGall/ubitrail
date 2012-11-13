@@ -66,4 +66,11 @@ summary(weevils)
 ###See informations about the area named '08':
 attributes(weevils[['08']])
 }
+\seealso{
+  \code{\link{ubitLoadFile}},
+  \code{\link{ubitMedianFilter}},
+  \code{\link{ubitInterpolate}} and
+  \code{\link{ubitCalcDistance}} to understand the
+  different steps of processing.
+}
 

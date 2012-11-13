@@ -16,8 +16,7 @@ NULL
 #' attributes(l)
 #' summary(l)
 #' }
-#' @seealso \code{\link{ubitMetaData}} to get only meta data from a CSV-like result file.
-#' @seealso \code{\link{ubitData}} to get only data from a CSV-like result file as a matrix.
+#' @seealso \code{\link{ubitMetaData}} to get only meta data from a CSV-like result file and \code{\link{ubitData}} to get only data from a CSV-like result file as a matrix. 
 #' @export
 ubitLoadFile <- function(FILE,verbose=FALSE){
 	if(verbose) print("Reading data...")#Reading data from result file
@@ -46,16 +45,21 @@ NULL
 #' The second element contains a matrix in wich each column correspond to an area and four row to
 #' describe their respective position and dimentions.
 #' @note The meta-data is in the first line of the CSV file.  It is preformated as an R expression. Therefore, 
-#' if you want to analyse data with another toolkit than R, you need to write a function to parse the meta data.
+#' if you want to analyse data with another toolkit than R, you need to write a function to parse the meta-data.
 #' @examples
-#' print("TODO")
-#  ubiMetaData('Results.csv')
+#' \dontrun{
+#' me <- ubitMetaData('Results.csv') 
+#' me
+#' }
 #' @seealso \code{\link{ubitData}} to get only data from a CSV-like result file as a matrix.
 #' @seealso \code{\link{ubitLoad}} to read a result file into a list of areas (more convenient).
 #' @export
 ubitMetaData <- function(FILE){
     e<-scan(FILE,what='character',nline=1)
     meta<-eval(parse(text=e))
+    
+    H <- as.numeric(meta$Global['Height']) 
+    meta$Areas['Y',] <- H - meta$Areas['Y',]
     return(meta)
 }
 	
@@ -71,10 +75,12 @@ NULL
 #' about area, territory, position and time.
 #'  
 #' @examples
-#' print("TODO")
-# ubiMetaData('Results.csv')
+#' \dontrun{
+#' da <- ubitData('Results.csv') 
+#' summary(da)
+#' }
 #' @seealso \code{\link{ubitMetaData}} to get only meta data from a CSV-like result file.
-#' @seealso \code{\link{ubitLoad}} to read a result file into a list of areas (more convenient).
+#' @seealso \code{\link{ubitLoadFile}} to read a result file into a list of areas (more convenient).
 #' @export
 ubitData<- function(FILE){
     n<-scan(FILE,what='character',skip=1,sep=',',nlines=1)
@@ -85,7 +91,6 @@ ubitData<- function(FILE){
     colnames(m_)<-n
     return(m_)
 }
- 
 NULL
 #' Parse data matrix to a list of matrices.
 #' 
@@ -98,15 +103,21 @@ NULL
 #' Each matrix in the list is given attributes about the area it represents.
 #' 
 #' @examples
-#' print("TODO")
-#  ubiMetaData('Results.csv')
+#' \dontrun{
+#' da <- ubitData('Results.csv') 
+#' me <- ubitMetaData('Results.csv') 
+#' l <- ubitParseDataToList(da,me)
+#' attributes(l)
+#' }
 #' @seealso \code{\link{ubitMetaData}} to get only meta data from a CSV-like result file.
 #' @seealso \code{\link{ubitData}} to get only data from a CSV-like result file as a matrix.
-#' @seealso \code{\link{ubitLoad}} to read a result file into a list of areas (more convenient).
+#' @seealso \code{\link{ubitLoadFile}} to read a result file into a list of areas (more convenient).
 #' @export
 ubitParseDataToList <- function(data,meta){
 	Global <- meta$Global
 	Areas <- meta$Areas
+	
+	Areas
 	l <- lapply(colnames(Areas),h_ubitSetAttributes,m=data,areas = Areas)
 	names(l) <- colnames(meta$Areas)
     attributes(l) <- c(attributes(l),as.list(Global))

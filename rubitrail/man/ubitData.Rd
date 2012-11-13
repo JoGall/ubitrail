@@ -23,13 +23,16 @@
   and time.
 }
 \examples{
-print("TODO")
+\dontrun{
+da <- ubitData('Results.csv')
+summary(da)
+}
 }
 \seealso{
   \code{\link{ubitMetaData}} to get only meta data from a
   CSV-like result file.
 
-  \code{\link{ubitLoad}} to read a result file into a list
-  of areas (more convenient).
+  \code{\link{ubitLoadFile}} to read a result file into a
+  list of areas (more convenient).
 }
 

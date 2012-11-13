@@ -1,3 +1,8 @@
+#' @include distance.R 
+#' @include filters.R
+#' @include input.R 
+#' @include interpol.R  
+NULL
 #' A general function to load and preprocess data from result file.
 #'
 #' This function will load a result file as a list of matrices. 
@@ -25,7 +30,7 @@
 #' ###See informations about the area named '08':
 #' attributes(weevils[['08']])
 #' @note processing large data can be quite long. If experiment your was long and contained multiple active areas, you should consider using multiple threads to speed up processing.
-#  @seealso \code{\link{ubitLoad}}, \code{\link{ubitMedianFilter}}, \code{\link{ubitInterpolate}} and \code{\link{ubitCalcDistance}} to understand the different steps of processing.
+#' @seealso \code{\link{ubitLoadFile}}, \code{\link{ubitMedianFilter}}, \code{\link{ubitInterpolate}} and \code{\link{ubitCalcDistance}} to understand the different steps of processing.
 #' @export
 ubitBasic <- function(FILE, filterFUN = ubitMedianFilter, k = 15, interpFUN = ubitInterpolate, h = 30, nmin = k*10, nThread = 1, verbose = FALSE){
 	l<-ubitLoadFile(FILE,verbose)
@@ -67,8 +72,3 @@ ubitBasic <- function(FILE, filterFUN = ubitMedianFilter, k = 15, interpFUN = ub
 }
 
 
-
-#l<-lapply(rep(1:4,time=1), function(i,FILE){
-#	st<-system.time(ubitRead(FILE,nThread = i,verbose=TRUE))
-#	cbind(st,N=i)
-#	},FILE='drosoResult.csv')

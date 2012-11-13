@@ -1,3 +1,6 @@
+#' @include filters.R
+NULL
+
 #'  Resample data from an area matrix.
 #' 
 #' This function allows to get position at regular time interval from reads.
@@ -20,7 +23,7 @@
 #' points(w15_intp[[1]][t_intp,'X'] ~ w15_intp[[1]][t_intp,'time'],col='red',pch=20,cex=0.5)
 #  ubiMetaData('Results.csv')
 #'
-# @seealso \code{\link{ubitMedianFilter}} to smooth data (before interpolation).
+#' @seealso \code{\link{ubitMedianFilter}} to smooth data (before interpolation).
 #' @export
 
 ubitInterpolate <- function(m,h=30,minRow=11){
