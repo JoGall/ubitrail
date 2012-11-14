@@ -70,6 +70,7 @@ class FeatureClassifier
          */
         cv::Point2f getPosition(){
             return realPosition;
+            //return position;
         }
 
     protected:

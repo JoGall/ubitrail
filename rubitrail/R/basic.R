@@ -29,20 +29,25 @@ NULL
 #' summary(weevils)
 #' ###See informations about the area named '08':
 #' attributes(weevils[['08']])
+#' \dontrun{
+#' data2 <- ubitBasic('Results.csv') 
+#' }
 #' @note processing large data can be quite long. If experiment your was long and contained multiple active areas, you should consider using multiple threads to speed up processing.
 #' @seealso \code{\link{ubitLoadFile}}, \code{\link{ubitMedianFilter}}, \code{\link{ubitInterpolate}} and \code{\link{ubitCalcDistance}} to understand the different steps of processing.
 #' @export
-ubitBasic <- function(FILE, filterFUN = ubitMedianFilter, k = 15, interpFUN = ubitInterpolate, h = 30, nmin = k*10, nThread = 1, verbose = FALSE){
+ubitBasic <- function(FILE, filterFUN = ubitMedianFilter, k = 15, interpFUN = ubitInterpolate, h = 30, nmin = k*10, nThread = 1, verbose = FALSE,t = 0.001){
 	l<-ubitLoadFile(FILE,verbose)
 	# we save the attributes of l:
 	atrs <- attributes(l);
     if(nThread > 1){
 		if(verbose) print(sprintf("Creating a team of %i threads...",nThread))
 		cl <- makeCluster(nThread)
-#~ 		
-#~ 		if(verbose) print("Converting data to absole data...") #Conversion to absolute data
-#~ 		l<-parLapply(cl,l,h_ubitRelativeToAbsolute,HG = as.numeric(attributes(l)[['Height']]) )
-#~ 		
+		if(t > 0){
+			if(verbose) print(sprintf("Removing outliers"))#Removing outliers
+			l <- parLapply(cl,l, ubitRemoveOutliers ,t )
+			}
+
+
 		if(verbose) print(sprintf("Filtering data using the function \"%s\"...","TODO"))#Filtering
 		l <- parLapply(cl,l, filterFUN ,k )
 		
@@ -56,6 +61,10 @@ ubitBasic <- function(FILE, filterFUN = ubitMedianFilter, k = 15, interpFUN = ub
 		stopCluster(cl)
 	}
 	else{
+		if(t > 0){
+			if(verbose) print(sprintf("Removing outliers"))#Removing outliers
+			l <- lapply(l, ubitRemoveOutliers ,t )
+			}
 
 		if(verbose) print(sprintf("Filtering data using the function \"%s\"...","TODO"))#Filtering
 		l <- lapply(l, filterFUN ,k )

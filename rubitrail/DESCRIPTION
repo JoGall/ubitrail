@@ -28,4 +28,5 @@ Collate:
     'basic.R'
     'utils.R'
     'plots.R'
+    'outlierExclusion.R'
 URL: http://ubitrail.sourceforge.net/

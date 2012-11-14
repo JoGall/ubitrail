@@ -4,7 +4,7 @@
 \usage{
   ubitBasic(FILE, filterFUN = ubitMedianFilter, k = 15,
     interpFUN = ubitInterpolate, h = 30, nmin = k * 10,
-    nThread = 1, verbose = FALSE)
+    nThread = 1, verbose = FALSE, t = 0.001)
 }
 \arguments{
   \item{FILE}{the name of the file which the metadata are
@@ -65,6 +65,9 @@ attributes(weevils)
 summary(weevils)
 ###See informations about the area named '08':
 attributes(weevils[['08']])
+\dontrun{
+data2 <- ubitBasic('Results.csv')
+}
 }
 \seealso{
   \code{\link{ubitLoadFile}},
