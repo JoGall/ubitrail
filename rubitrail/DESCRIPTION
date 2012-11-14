@@ -16,13 +16,15 @@ Description: This package provides tools to read, analyse and represent output
 License: GPL (>=3.0)
 Depends:
     R (>= 2.15.0),
-    parallel
+    parallel,
+    rtiff
 LazyLoad: TRUE
 Collate:
-    'basic.R'
-    'distance.R'
-    'filters.R'
-    'input.R'
     'interpol.R'
+    'input.R'
+    'filters.R'
+    'distance.R'
+    'basic.R'
     'utils.R'
+    'plots.R'
 URL: http://ubitrail.sourceforge.net/

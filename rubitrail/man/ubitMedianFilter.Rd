@@ -35,4 +35,9 @@ lines(w15[[1]][1:2000,'X'] ~ w15[[1]][1:2000,'time'],col='green')
 ##k=101 = over filtered:
 lines(w101[[1]][1:2000,'X'] ~ w101[[1]][1:2000,'time'],col='red')
 }
+\seealso{
+  \code{\link{ubitLoadFile}} to read data from a CSV-like
+  result file and \code{\link{ubitInterpolate}} to get a
+  regular sampling (after filtering).
+}
 

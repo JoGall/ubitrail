@@ -24,10 +24,13 @@
   The meta-data is in the first line of the CSV file.  It
   is preformated as an R expression. Therefore, if you want
   to analyse data with another toolkit than R, you need to
-  write a function to parse the meta data.
+  write a function to parse the meta-data.
 }
 \examples{
-print("TODO")
+\dontrun{
+me <- ubitMetaData('Results.csv')
+me
+}
 }
 \seealso{
   \code{\link{ubitData}} to get only data from a CSV-like

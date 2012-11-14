@@ -1,3 +1,5 @@
+#' @include input.R
+#' @include interpol.R  
 NULL
 #'  Apply a running median filter on an an area matrix.
 #' 
@@ -22,8 +24,7 @@ NULL
 #' ##k=101 = over filtered:
 #' lines(w101[[1]][1:2000,'X'] ~ w101[[1]][1:2000,'time'],col='red')
 #'
-# @seealso \code{\link{ubitLoad}} to read data from a CSV-like result file.
-# @seealso \code{\link{ubitInterpolate}} to get a regular sampling (after filtering).
+#' @seealso \code{\link{ubitLoadFile}} to read data from a CSV-like result file and \code{\link{ubitInterpolate}} to get a regular sampling (after filtering).
 #' @export
 ubitMedianFilter <- function(m,k=15){
 	if(!any(class(m) == "matrix"))
