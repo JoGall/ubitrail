@@ -18,11 +18,11 @@ NULL
 #' w101 <- lapply(weevils,ubitMedianFilter,k=101)
 #' ### See k impacts on smoothing:
 #' ##Raw:
-#' plot(weevils[[1]][1:2000,'X'] ~ weevils[[1]][1:2000,'time'],type='l',col='blue')
+#' plot(weevils[['08']][1:2000,'X'] ~ weevils[['08']][1:2000,'time'],type='l',col='blue')
 #' ##k=15 = OK:
-#' lines(w15[[1]][1:2000,'X'] ~ w15[[1]][1:2000,'time'],col='green')
+#' lines(w15[['08']][1:2000,'X'] ~ w15[['08']][1:2000,'time'],col='green')
 #' ##k=101 = over filtered:
-#' lines(w101[[1]][1:2000,'X'] ~ w101[[1]][1:2000,'time'],col='red')
+#' lines(w101[['08']][1:2000,'X'] ~ w101[['08']][1:2000,'time'],col='red')
 #'
 #' @seealso \code{\link{ubitLoadFile}} to read data from a CSV-like result file and \code{\link{ubitInterpolate}} to get a regular sampling (after filtering).
 #' @export

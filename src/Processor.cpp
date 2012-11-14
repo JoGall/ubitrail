@@ -65,7 +65,7 @@ Processor::Processor( Options options, VideoGrabber videoGrab, bool hasGUI,cv::M
      if(m_options.writeFirstPicture && !preview){
 //        std::string tmp (;
         m_decorator.getDecoratedFrame(deco);
-        cv::imwrite(m_options.outDir+"/FirstPicture.jpg",deco);
+        cv::imwrite(m_options.outDir+"/FirstPicture.tiff",deco);
     }
 
 }

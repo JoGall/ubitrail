@@ -17,7 +17,8 @@ License: GPL (>=3.0)
 Depends:
     R (>= 2.15.0),
     parallel,
-    rtiff
+    rtiff,
+    MASS
 LazyLoad: TRUE
 Collate:
     'interpol.R'

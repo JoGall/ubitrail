@@ -13,7 +13,7 @@ the range 2-10.  Low values may erroneously detect motion in \n\
 pixelated noise, while extremely high values may be overly insensitive \n\
 and fail to detect motion at all."
 
-#define TOOLTIP_PROCPARS_THRESHOLD "The number of frames used to train the motion detector."
+#define TOOLTIP_PROCPARS_TRAINING "The number of frames used to train the motion detector."
 
 
 #endif // GUITOOLTIPS_HPP_INCLUDED

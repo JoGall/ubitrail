@@ -19,7 +19,7 @@
 
 
 #include "PageVideoInput.hpp"
-
+#include "guiToolTips.hpp"
 //todel
 #include <iostream>
 
@@ -29,12 +29,14 @@ PageVideoInput::PageVideoInput(){
 
 PageVideoInput::PageVideoInput(Gtk::Assistant* parent,Options* opts,VideoGrabber* videoGrab ):
 m_title(PAGE_VIDEO_INPUT_TITLE),
-m_description(PAGE_VIDEO_INPUT_DESCRIPTION),
+//m_description(PAGE_VIDEO_INPUT_DESCRIPTION),
 m_currentFileName(PAGE_VIDEO_INPUT_DESCRIPTION_NO_FILE),
 m_loadFile(PAGE_VIDEO_INPUT_LOAD_FILE_BUTTON),
 fileLocation(""),
 webCamIdx(-1)
 {
+    m_description.set_markup(PAGE_VIDEO_INPUT_DESCRIPTION);
+    m_description.set_use_markup(true);
     m_opts = opts;
     m_videoGrab = videoGrab;
     m_parent = parent;
@@ -48,6 +50,8 @@ webCamIdx(-1)
 
     m_loadFile.signal_clicked().connect(sigc::mem_fun(*this,&PageVideoInput::on_loadFile_clicked) );
     show_all_children();
+
+
 }
 
 PageVideoInput::~PageVideoInput()

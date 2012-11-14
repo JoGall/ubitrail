@@ -15,12 +15,12 @@ NULL
 #' data(weevils)
 #' w15 <- lapply(weevils,ubitMedianFilter,k=15)
 #' ##Before resampling
-#' t <- (w15[[1]][,'time'] > 40*1000 & w15[[1]][,'time'] < 80*1000)
-#' plot(w15[[1]][t,'X'] ~ w15[[1]][t,'time'],col='blue',pch='x',cex=0.5)
+#' t <- (w15[['08']][,'time'] > 40*1000 & w15[['08']][,'time'] < 80*1000)
+#' plot(w15[['08']][t,'X'] ~ w15[['08']][t,'time'],col='blue',pch='x',cex=0.5)
 #' ##After resampling
 #' w15_intp <- lapply(w15,ubitInterpolate,h=10)
-#' t_intp <- (w15_intp[[1]][,'time'] > 40*1000 & w15_intp[[1]][,'time'] < 80*1000)
-#' points(w15_intp[[1]][t_intp,'X'] ~ w15_intp[[1]][t_intp,'time'],col='red',pch=20,cex=0.5)
+#' t_intp <- (w15_intp[['08']][,'time'] > 40*1000 & w15_intp[['08']][,'time'] < 80*1000)
+#' points(w15_intp[['08']][t_intp,'X'] ~ w15_intp[['08']][t_intp,'time'],col='red',pch=20,cex=0.5)
 #  ubiMetaData('Results.csv')
 #'
 #' @seealso \code{\link{ubitMedianFilter}} to smooth data (before interpolation).

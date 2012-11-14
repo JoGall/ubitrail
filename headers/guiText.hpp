@@ -1,12 +1,13 @@
 
+#define SLASH_ "/"
 #define TITLE_OF_GUI_OPTIONS_PARSER "Settings"
 #define TITLE_OF_SETTING_ASSISTANT "Setting Assistant"
 
 
 #define PAGE_VIDEO_INPUT_TITLE "Video Input"
 #define PAGE_VIDEO_INPUT_DESCRIPTION "Select a .avi video file to analyse.  Most common video formats are \n\
-compatible (a full list is available at http:\/\/opencv.willowgarage.com\/wiki\/VideoCodecs). \n\
-The K-Lite codec pack (available at http:\/\/codecguide.com\/) can be a useful tool to \n\
+compatible (a full list is available <a href=\"http://opencv.willowgarage.com/wiki/VideoCodecs\">here</a>).\n\
+The <a href=\"http://codecguide.com\">K-Lite codec pack</a> can be a useful tool to\n\
 update your system codecs."
 #define PAGE_VIDEO_INPUT_LOAD_FILE_BUTTON "Pick a file"
 #define PAGE_VIDEO_INPUT_DESCRIPTION_NO_FILE "No file selected yet"
