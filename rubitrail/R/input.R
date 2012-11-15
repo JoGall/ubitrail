@@ -28,7 +28,7 @@ ubitLoadFile <- function(FILE,verbose=FALSE){
 	
 	#To preserve the attributes of l:
 	atrs <- attributes(l);
-	l<-lapply(l,h_ubitRelativeToAbsolute,HG = as.numeric(attributes(l)[['Height']]) )
+	l<-lapply(l,h_ubitRelativeToAbsolute, HG = as.numeric(attributes(l)[['Height']]) )
 	attributes(l) <- atrs
 	
 	l
@@ -59,7 +59,7 @@ ubitMetaData <- function(FILE){
     meta<-eval(parse(text=e))
     
     H <- as.numeric(meta$Global['Height']) 
-    meta$Areas['Y',] <- H - meta$Areas['Y',]
+    meta$Areas['Y',] <- (H - meta$Areas['Y',]) - meta$Areas['H',]
     return(meta)
 }
 	
@@ -88,8 +88,9 @@ ubitData<- function(FILE){
     nc<-length(n)
     nr<-length(a)/nc
     m_<-matrix(a,nr,nc,byrow=T)
-    colnames(m_)<-n
-    return(m_)
+    colnames(m_) <- n
+    m_[,'Y'] <- 1 - m_[,'Y']
+    m_
 }
 NULL
 #' Parse data matrix to a list of matrices.
@@ -116,8 +117,7 @@ NULL
 ubitParseDataToList <- function(data,meta){
 	Global <- meta$Global
 	Areas <- meta$Areas
-	
-	Areas
+#~ 	Areas
 	l <- lapply(colnames(Areas),h_ubitSetAttributes,m=data,areas = Areas)
 	names(l) <- colnames(meta$Areas)
     attributes(l) <- c(attributes(l),as.list(Global))

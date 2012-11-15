@@ -148,7 +148,7 @@ cv::Point2f FeatureClassifier::updatePosition (cv::Point2f center){
     if(positionsAccum.empty())
         positAsMat.copyTo(positionsAccum);
 
-    cv::accumulateWeighted(positAsMat,positionsAccum,0.3); //MAGIC NUMBER
+    cv::accumulateWeighted(positAsMat,positionsAccum,FEATURE_CLASSIF_ACCU_WEIGHT);
     return cv::Point2f(positionsAccum.at<float>(0,0) ,positionsAccum.at<float>(0,1));
 
 }

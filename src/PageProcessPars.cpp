@@ -17,7 +17,7 @@
     along with Ubitrail.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
+#include "guiToolTips.hpp"
 #include "PageProcessPars.hpp"
 
 PageProcessPars::PageProcessPars(Gtk::Assistant* parent,Options* opts,VideoGrabber* videoGrab ):
@@ -47,6 +47,8 @@ m_lab_training("Number of frames used for training: ")
     m_spinButt_sensit.signal_changed().connect(sigc::mem_fun(*this,&PageProcessPars::updateOpts) );
     m_spinButt_training.signal_changed().connect(sigc::mem_fun(*this,&PageProcessPars::updateOpts) );
 
+    m_hb_sensit.set_tooltip_text(TOOLTIP_PROCPARS_SENSITIVITY);
+    m_hb_training.set_tooltip_text(TOOLTIP_PROCPARS_TRAINING);
 
 
 }

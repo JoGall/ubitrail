@@ -28,7 +28,6 @@ PROCESSING:
 
 BENCHMARCK:
 
-    @+! interpolation type by display
     @++! GUI vs CL
     @++! see what hapend if the number of thread is down and number of area high
 
@@ -43,10 +42,10 @@ ASSISTANT:
     @+! images
     @+! icon
     @+! tooltips
-    @! allow user to go forward from experimental definition screen with 'Default' area type without having to first change area type
-# => MAKE ANOTHER QUIT WHEN PROCESSOR IS FINISHED
- # => @+++! Quiting option
- # => @+++!+++ Previewer
+# => @! allow user to go forward from experimental definition screen with 'Default' area type without having to first change area type
+# => @! MAKE ANOTHER QUIT WHEN PROCESSOR IS FINISHED
+# => @+++! Quiting option
+# => @+++!+++ Previewer
 
 
 DISPLAY:
@@ -76,11 +75,15 @@ General:
     @+++!+ Document the code
     @+++!+ HelpButton
     @+++!+ Version
-    @++!++ErrorPrinter(VIDEO_WONT_INIT);
+    @++!++ ErrorPrinter(VIDEO_WONT_INIT);
     @++!++ Define territories in mask
     @+!+ print number of territory in output matrix;
     @+!+ print source of mask...
     @+!+ error closing GUI when using mask ["(ubitrail:3363): Gtk-CRITICAL **: IA__gtk_assistant_set_page_complete: assertion `child != NULL' failed"]
+
+Quitting mechanism
+    @++!++ better closing mechanism (more robust)
+    @++!++ send notification when finnished
 
 # => @+++! make a clean finishing mechanism
 # => @++!+ make gui start without assistant

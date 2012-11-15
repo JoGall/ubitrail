@@ -19,7 +19,7 @@
 
 
 #include "PageAreaMaker.hpp"
-
+#include "guiToolTips.hpp"
 
 PageAreaMaker::PageAreaMaker(Gtk::Assistant* parent,Options* opts,VideoGrabber* videoGrab ):
 m_title(PAGE_AREA_TITLE),
@@ -84,6 +84,11 @@ m_butt_saveFrame("Save first frame")
     m_generatePreview2.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::makePreview) );
     m_butt_maskPicker.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_loadFile_clicked));
     m_butt_saveFrame.signal_clicked().connect(sigc::mem_fun(*this,&PageAreaMaker::on_savefirstFrameForManualMask));
+
+
+
+    m_hb_nDish.set_tooltip_text(TOOLTIP_AREA_AUTOCIRCLE_CIRCLES);
+    m_hb_nLine.set_tooltip_text(TOOLTIP_AREA_AUTOCIRCLE_LINES);
     m_mode.set_active(-1);
 }
 
@@ -155,7 +160,7 @@ void PageAreaMaker::on_loadFile_clicked(){
 
     dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
     dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
-    Gtk::FileFilter     filter_any,  filter_png,  filter_jpg,  filter_tiff,  filter_bmp;
+    Gtk::FileFilter filter_any,  filter_png,  filter_jpg,  filter_tiff,  filter_bmp;
 
     filter_any.set_name("Any files");
     filter_png.set_name(".png images");

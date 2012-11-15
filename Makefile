@@ -70,13 +70,13 @@ all : $(EXEC_NAME)
 
 # linking
 $(EXEC_NAME) : $(OBJS)
-
-	@echo "Building $@"
-	$(CXX) $^ $(LIBS) -o $@
+	@echo "==========="
+	@echo "Linking $@"
+	@$(CXX) $^ $(LIBS) -o $@
 
 %.o : %.cpp
 	@echo "Building $*.o"
-	$(CXX) -c $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp -o $*.o
+	@$(CXX) -c $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp -o $*.o
 	@gcc -MM $(CPPFLAGS) $(SOURCE_DIR)/$*.cpp > $*.d
 	@mv -f $*.d $*.d.tmp
 	@sed -e 's|.*:|$*.o:|' < $*.d.tmp > $*.d
