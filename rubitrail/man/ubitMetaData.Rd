@@ -5,8 +5,8 @@
   ubitMetaData(FILE)
 }
 \arguments{
-  \item{FILE}{the name of the file which the metadata are
-  to be read from.}
+  \item{FILE}{the name of the file from which the metadata
+  are to be read.}
 }
 \value{
   A list of two elements. The first element contains a

@@ -1,15 +1,15 @@
 #' @include filters.R
 NULL
 
-#'  Resample data from an area matrix.
+#' Resample data from an area matrix.
 #' 
-#' This function allows to get position at regular time interval from reads.
+#' This function allows returns position from reads at a regular time interval.
 #' This is perfomed through linear interpolation.
 #' @param m a numerical matrix corresponding to an area.
 #' @param h the desired resampling frequency in Hz.
 #' @param minRow an integer defining the minimal number of reads. If less than minRow reads are present in m, the function returns an empty matrix.
 #' @return A new area matrix.
-#' @note The new matrix will very likely have a different nember of row from the source matrix. 
+#' @note The new matrix will likely have a different number of rows than the source matrix. 
 #' The attributes of the source matrix are copied to the new matrix.
 #' @examples
 #' data(weevils)

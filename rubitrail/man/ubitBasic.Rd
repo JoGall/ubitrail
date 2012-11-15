@@ -31,30 +31,30 @@
   \item{nThread}{a positive integer. The number of threads
   to be created for parallel processing.}
 
-  \item{verbose}{a bolean. If TRUE, the function will print
-  messaged at every steps.}
+  \item{verbose}{a boolean. If TRUE, the function will
+  print messages at every step.}
 }
 \value{
-  A list of numerical matrices. Each matrix correspond to
+  A list of numerical matrices. Each matrix corresponds to
   an area.
 }
 \description{
   This function will load a result file as a list of
   matrices. Then, the data in each matrix is smoothed,
   resampled and the distance between successive positions
-  is calculated. This function is essentialy a wrapper for
+  is calculated. This function is essentially a wrapper for
   other functions also available in rubitrail package.
 }
 \note{
-  The returned list contains a numerical marix for each
+  The returned list contains a numerical matrix for each
   area. The attributes of list contain metadata and
-  additionnal information is present in each the the
+  additional information is present in each of the
   attributes of each matrix. Each matrix in the list is
   given attributes about the area it represents.
 
-  processing large data can be quite long. If experiment
-  your was long and contained multiple active areas, you
-  should consider using multiple threads to speed up
+  Processing can be protracted for large datasets. If your
+  experiment was long and contained multiple active areas,
+  you should consider using multiple threads to speed up
   processing.
 }
 \examples{

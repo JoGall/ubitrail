@@ -31,7 +31,7 @@ attributes(l)
 }
 }
 \seealso{
-  \code{\link{ubitMetaData}} to get only meta data from a
+  \code{\link{ubitMetaData}} to get only metadata from a
   CSV-like result file.
 
   \code{\link{ubitData}} to get only data from a CSV-like

@@ -17,14 +17,14 @@
   A new area matrix.
 }
 \description{
-  This function allows to get position at regular time
-  interval from reads. This is perfomed through linear
+  This function allows returns position from reads at a
+  regular time interval. This is perfomed through linear
   interpolation.
 }
 \note{
-  The new matrix will very likely have a different nember
-  of row from the source matrix. The attributes of the
-  source matrix are copied to the new matrix.
+  The new matrix will likely have a different number of
+  rows than the source matrix. The attributes of the source
+  matrix are copied to the new matrix.
 }
 \examples{
 data(weevils)
