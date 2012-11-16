@@ -26,12 +26,12 @@ NULL
 ubitCalcDistance <- function(m){
 	
 	if(!any(class(m) == "matrix"))
-		stop("This function works with a matrix. If you have a a list of matrices, use lapply to call this function on each element of the list. See examples for details.")
+		stop("This function works with a matrix. If you have a list of matrices, use lapply to call this function on each element of the list. See examples for details.")
 		
 	overwrite <- FALSE
 	if(any(attributes(m)$dimnames[[2]] == "Distance")){
 		overwrite <- TRUE
-		warning("This distances have already been calculated for this data matrix. Overwriting the data.")
+		warning("These distances have already been calculated for this data matrix. Overwriting the data.")
 	}
 	
 		

@@ -33,9 +33,9 @@ ubitPlot <- function(l,refImg=NA, palet = ubitTransCol){
 }
 
 NULL
-#'  Plot a 2d density extimate of all areas.
+#'  Plot a 2D density estimate of all areas.
 #' 
-#' This function represents the relative position density each gent during the entire experiment.
+#' This function represents the relative position density of each agent during the entire experiment.
 #' 
 #' @param l a list of area matrix (see details).
 #' @param refImg the path to a reference TIFF image (see details).
@@ -46,8 +46,8 @@ NULL
 #' \code{refImg} is an image of the same size as the video frames.
 #' If specified (\emph{i.e.} if \code{refImg != NA}), the function will use the image as
 #' background for the plot.
-#' An easy way to obtain such an image is to ask Ubitrail to save the first frame (this done by ticking the corresponding box in the GUI).
-#' For each area, the kernel extimate density function will use a bandwidth \code{bw = W/h}, 
+#' An easy way to obtain such an image is to ask UbiTrail to save the first frame (by ticking the corresponding box in the GUI).
+#' For each area, the kernel estimate density function will use a bandwidth \code{bw = W/h}, 
 #' where \code{W} is the width of the area.
 #' @examples
 #' data(weevils_filtered)
@@ -80,7 +80,7 @@ ubitPlotHeatMap <- function(l,refImg=NA,resol = 50, h=10 ,palet = ubitTransCol(5
 	i_atrs <-attributes(l[[i]])
 	
 	if(!i_atrs$tags.isHomogenous)
-		warning("This data is not homogenous, you should probably interpolate it first (see ?ubitInterpolate()).")
+		warning("This data is not homogenous, you should probably interpolate it first (see ?ubitInterpolate() ).")
 		
 	text(x = i_atrs$X, y= i_atrs$Y,label = i)
 	if(nrow(l[[i]])>2){
@@ -93,8 +93,8 @@ ubitPlotHeatMap <- function(l,refImg=NA,resol = 50, h=10 ,palet = ubitTransCol(5
 }
 
 #~ library(rubitrail)
-#~ l <- ubitBasic('/home/quentin/Desktop/weevils/Result.csv')
-#~ fn <- '/home/quentin/Desktop/weevils/FirstPicture.tiff'
+#~ l <- ubitBasic('/home/user/Desktop/weevils/Result.csv')
+#~ fn <- '/home/user/Desktop/weevils/FirstPicture.tiff'
 #~ #png (w=640,h=480)
 #~ ubitPlot(l,fn)
 #~ ubitPlotHeatMap(l,fn)

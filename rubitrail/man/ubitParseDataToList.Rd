@@ -17,10 +17,10 @@
   list of matrices.
 }
 \note{
-  The returned list contains a numerical marix for each
+  The returned list contains a numerical matrix for each
   area. The attributes of list contain metadata. Each
-  matrix in the list is given attributes about the area it
-  represents.
+  matrix in the list is assigned attributes about the area
+  it represents.
 }
 \examples{
 \dontrun{
@@ -31,8 +31,8 @@ attributes(l)
 }
 }
 \seealso{
-  \code{\link{ubitMetaData}} to get only metadata from a
-  CSV-like result file.
+  \code{\link{ubitMetaData}} to get only metadata from the
+  first line of a CSV-like result file.
 
   \code{\link{ubitData}} to get only data from a CSV-like
   result file as a matrix.

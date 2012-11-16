@@ -17,8 +17,8 @@
   A new area matrix.
 }
 \description{
-  This function allows returns position from reads at a
-  regular time interval. This is perfomed through linear
+  This function returns position from reads at a regular
+  time interval. This is perfomed through linear
   interpolation.
 }
 \note{

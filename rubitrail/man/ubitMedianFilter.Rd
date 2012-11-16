@@ -7,18 +7,18 @@
 \arguments{
   \item{m}{a numerical matrix corresponding to an area.}
 
-  \item{k}{an integer specifing the size of the smoothing
+  \item{k}{an integer specifying the size of the smoothing
   window. \emph{it must be odd}.}
 }
 \value{
-  A numerical matrix of the same dimention as m.
+  A numerical matrix of the same dimension as m.
 }
 \description{
   This function is used to eliminate outliers from an area
   matrix.
 }
 \note{
-  A read is written by Ubitrail every time an agent is
+  A read is written by UbiTrail every time an agent is
   detected. Therefore, a read contains information about
   area, territory, position and time.
 }

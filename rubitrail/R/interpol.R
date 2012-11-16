@@ -3,7 +3,7 @@ NULL
 
 #' Resample data from an area matrix.
 #' 
-#' This function allows returns position from reads at a regular time interval.
+#' This function returns position from reads at a regular time interval.
 #' This is perfomed through linear interpolation.
 #' @param m a numerical matrix corresponding to an area.
 #' @param h the desired resampling frequency in Hz.

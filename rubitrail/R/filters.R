@@ -1,14 +1,14 @@
 #' @include input.R
 #' @include interpol.R  
 NULL
-#'  Apply a running median filter on an an area matrix.
+#' Apply a running median filter on an an area matrix.
 #' 
 #' This function is used to eliminate outliers from an area matrix.
 #' @param m a numerical matrix corresponding to an area.
-#' @param k an integer specifing the size of the smoothing window. \emph{it must be odd}.
-#' @return A numerical matrix of the same dimention as m.
+#' @param k an integer specifying the size of the smoothing window. \emph{it must be odd}.
+#' @return A numerical matrix of the same dimension as m.
 #' @note 
-#' A read is written by Ubitrail every time an agent is detected. Therefore, a read contains information
+#' A read is written by UbiTrail every time an agent is detected. Therefore, a read contains information
 #' about area, territory, position and time.
 #'  
 #' @examples

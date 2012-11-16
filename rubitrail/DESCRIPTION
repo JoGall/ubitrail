@@ -1,6 +1,6 @@
 Package: rubitrail
 Type: Package
-Title: rubitrail, a package to analyse the output of Ubitrail, an open-source
+Title: rubitrail, a package to analyse the output of UbiTrail, an open-source
     video tracking program for analysis of animal motion.
 Version: 0.1
 Date: 2012-10-26
@@ -10,9 +10,9 @@ Authors@R: c(person("Quentin", "Geissmann", role = c("aut", "cre"),email =
 Author: Quentin Geissmann, with contributions from Joe Gallagher
 Maintainer: Quentin Geissmann <qgeissmann@gmail.com>
 Description: This package provides tools to read, analyse and represent output
-    data from Ubitrail. Used in combination, Ubitrail and rubitrail provide a
+    data from UbiTrail. Used in combination, UbiTrail and rubitrail provide a
     complete toolkit to quantify single animal motion in arenas. Please visit
-    Ubitrail's website for complete documentation and tutorials.
+    UbiTrail's website for complete documentation and tutorials.
 License: GPL (>=3.0)
 Depends:
     R (>= 2.15.0),
@@ -21,9 +21,9 @@ Depends:
     MASS
 LazyLoad: TRUE
 Collate:
-    'filters.R'
     'interpol.R'
     'input.R'
+    'filters.R'
     'distance.R'
     'basic.R'
     'utils.R'
