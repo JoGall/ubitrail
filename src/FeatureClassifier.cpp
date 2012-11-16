@@ -87,13 +87,17 @@ void FeatureClassifier::makeMiniImg(std::vector<cv::Point>& contour,  cv::Mat& m
 void FeatureClassifier::makeFeatures(std::vector<double>& featureVec,std::vector<cv::Point>& contour,  cv::Mat& miniIMG){
 
     //Area:
-    featureVec[FEATURE_AREA_IDX] = contourArea(contour);
+    //featureVec[FEATURE_AREA_IDX] = contourArea(contour);
+    //test
+    //featureVec[FEATURE_AREA_IDX] = 1;
 
 
     //Distance from the former center:
     double y,x;
     cv::Moments moms = cv::moments(contour);
+
     cv::RotatedRect Rect = cv::minAreaRect(contour);
+
     cv::Point2f rRect[4];
     Rect.points(rRect);
     if(moms.m00 >0){
@@ -104,6 +108,7 @@ void FeatureClassifier::makeFeatures(std::vector<double>& featureVec,std::vector
         x = (rRect[0].x+rRect[2].x) /2;
         y = (rRect[0].y+rRect[2].y) /2;
     }
+
 
     cv::Point2f center(x,y);
     double dist, dx,dy;
@@ -148,7 +153,11 @@ cv::Point2f FeatureClassifier::updatePosition (cv::Point2f center){
     if(positionsAccum.empty())
         positAsMat.copyTo(positionsAccum);
 
-    cv::accumulateWeighted(positAsMat,positionsAccum,FEATURE_CLASSIF_ACCU_WEIGHT);
+    //cv::accumulateWeighted(positAsMat,positionsAccum,FEATURE_CLASSIF_ACCU_WEIGHT);
+    cv::accumulateWeighted(positAsMat,positionsAccum,0.3);
+    //cv::accumulateWeighted(positAsMat.row(0),positionsAccum.row(0),FEATURE_CLASSIF_ACCU_WEIGHT);
+
+
     return cv::Point2f(positionsAccum.at<float>(0,0) ,positionsAccum.at<float>(0,1));
 
 }
@@ -186,9 +195,11 @@ void FeatureClassifier::updateMeanSD(std::vector<double>& vect){
 
     if(roundTrained > 0){
         cv::absdiff(means, tmp,absDevs);
-        cv::accumulateWeighted(absDevs,sds,FEATURE_CLASSIF_ACCU_WEIGHT);
+        //cv::accumulateWeighted(absDevs,sds,FEATURE_CLASSIF_ACCU_WEIGHT);
+        cv::accumulateWeighted(absDevs,sds,FEATURE_CLASSIF_ACCU_WEIGHT/10);
     }
 
+    //cv::accumulateWeighted(tmp,means,FEATURE_CLASSIF_ACCU_WEIGHT);
     cv::accumulateWeighted(tmp,means,FEATURE_CLASSIF_ACCU_WEIGHT);
 }
 

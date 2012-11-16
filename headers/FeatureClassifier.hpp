@@ -71,13 +71,13 @@ class FeatureClassifier
          * @return the last accepted position.
          */
         cv::Point2f getPosition(){
-//            return realPosition;
-            return position;
+            return realPosition;
+            //return position;
         }
         //TODEL
-        void printFeatures(){
-            std::cout<<"TAG"<<L<<","<<position<<","<<realPosition<<","<<featuresMeansSds<<std::endl;
-        }
+       // void printFeatures(){
+       //     std::cout<<"TAG"<<L<<","<<position<<","<<realPosition<<","<<featuresMeansSds<<std::endl;
+      //  }
     protected:
         void makeMiniImg(std::vector<cv::Point>& contour,   cv::Mat& miniIMG,  cv::Mat& img);
 

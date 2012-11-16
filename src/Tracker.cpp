@@ -62,8 +62,8 @@ void Tracker::nextFrame(const cv::Mat& wholeFrame, double time){
                 isTrained = true;
                 position = featureClassifier.getPosition();
                 isPositionValid = true;
-                if(m_label == "06")
-                    featureClassifier.printFeatures();
+//                if(m_label == "06")
+ //                   featureClassifier.printFeatures();
                 }
             }
         }

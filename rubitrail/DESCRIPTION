@@ -21,9 +21,9 @@ Depends:
     MASS
 LazyLoad: TRUE
 Collate:
+    'filters.R'
     'interpol.R'
     'input.R'
-    'filters.R'
     'distance.R'
     'basic.R'
     'utils.R'
