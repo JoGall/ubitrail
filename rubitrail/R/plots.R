@@ -14,6 +14,9 @@ NULL
 #' @export
 ubitPlot <- function(l,refImg=NA, palet = ubitTransCol){
 	atrs <- attributes(l)
+
+	if(class(l) != "list")
+		stop(sprintf("The function %s expected argument 'l' to be a list",gettext(match.call()[[1]]) ))
 	if(!is.na(refImg)){
 		myImg <- readTiff(refImg, page = 0, reduce = 0)
 		plot(myImg)

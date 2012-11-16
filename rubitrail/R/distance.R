@@ -26,7 +26,7 @@ NULL
 ubitCalcDistance <- function(m){
 	
 	if(!any(class(m) == "matrix"))
-		stop("This function works with a matrix. If you have a list of matrices, use lapply to call this function on each element of the list. See examples for details.")
+		stop(sprintf("The function %s expected argument 'm' to be a matrix. If you have a a list of matrices, use lapply to call this function on each element of the list. See examples for details.",gettext(match.call()[[1]]) ))
 		
 	overwrite <- FALSE
 	if(any(attributes(m)$dimnames[[2]] == "Distance")){
