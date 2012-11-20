@@ -59,8 +59,9 @@ int main(int argc, char **argv){
             Glib::Thread *messageThread;
             messageThread = Glib::Thread::create(sigc::mem_fun(wm, &WaitingMessage::runMe), true);
             pro = new Processor(*opts, *videoGrab,true);
+            //messageThread->join();
             Gtk::Main::quit();
-            messageThread->join();
+
             }
 
         else{

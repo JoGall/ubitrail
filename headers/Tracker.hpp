@@ -135,6 +135,7 @@ class Tracker
         }
 
     protected:
+        void preprocess(const cv::Mat& in,cv::Mat& out);
     private:
 
         Area m_area;
@@ -147,6 +148,7 @@ class Tracker
         bool isPositionValid;
         cv::Point2f position;
         bool isTrained;
+        int m_agentSize;
 
 };
 

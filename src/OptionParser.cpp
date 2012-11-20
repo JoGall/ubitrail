@@ -49,7 +49,7 @@ if (argc <=1 ){
 std::stringstream tss;
 
 char c=0;
-    while ((c = getopt (argc, argv, "GAhraipud:v:l:w:t:s:o:m:")) != -1){
+    while ((c = getopt (argc, argv, "GAhraipud:v:l:w:t:s:z:o:m:")) != -1){
         tss.str("");
          switch (c)
            {
@@ -97,6 +97,9 @@ char c=0;
             break;
         case 't':
             opts.MOGTrainingRounds = atoi(optarg);
+            break;
+        case 'z':
+            opts.agentSize = atoi(optarg);
             break;
         case 'o':
             opts.outDir = optarg;
@@ -149,6 +152,13 @@ bool OptionParser::checkOptions(){
         <<"The motion sensitivity has to be in the 0:1000 range!"<<std::endl;
         valid = false;
     }
+
+    if(opts.agentSize < 1 ){
+        std::cerr<<"Wrong argument for option -z"<<std::endl
+        <<"The size of the agent must be higher than 1!"<<std::endl;
+        valid = false;
+    }
+
 
     if(opts.MOGTrainingRounds < 0 ){
         std::cerr<<"Wrong argument for option -t"<<std::endl

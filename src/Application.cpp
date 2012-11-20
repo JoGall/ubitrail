@@ -51,8 +51,8 @@ m_controlPanel->set_icon_from_file("../ubitrail.ico");
 
 Application::~Application(){
     m_pro->setIsFinished(true);
-    processingThread->join();
-    drawingLoopThread->join();
+    //processingThread->join();
+    //drawingLoopThread->join();
     delete m_drawingArea;
     delete m_controlPanel;
     delete ROI;

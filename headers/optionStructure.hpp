@@ -13,6 +13,7 @@ struct Options {
         int nLinePerDishes; // -l N
         int motionSensitivity; // -s N
         int MOGTrainingRounds; // -t N
+        int agentSize; // -z N
         bool resultFile; // -r
         bool videosOutput; // -i
         bool allFrameOutput; // -a
@@ -30,6 +31,7 @@ struct Options {
         nLinePerDishes(0),
         motionSensitivity(2),
         MOGTrainingRounds(500),
+        agentSize(10),
         resultFile(false),
         videosOutput(false),
         allFrameOutput(false),

@@ -22,8 +22,11 @@ this->show_all_children();
 WaitingMessage::~WaitingMessage()
 {
     //dtor
+
 }
 
 void WaitingMessage::runMe(){
     Gtk::Main::run(*this);
+    this->show();
+    this->show_all_children();
 }
