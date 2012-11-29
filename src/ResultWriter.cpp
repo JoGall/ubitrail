@@ -122,9 +122,9 @@ void ResultWriter::writeHead(){
         }
 
 
-        string dateString(currentDateTime());
+        std::string dateString(currentDateTime());
 
-for(int i = 0; i < dateString.length(); i++){
+for(unsigned int i = 0; i < dateString.length(); i++){
     if(dateString[i] == ' ')
         dateString[i] = '_';
 }

@@ -1,33 +1,33 @@
 # depslib dependency file v1.0
-1349185443 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\application.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\application.cpp
 	"Application.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\area.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\area.cpp
 	"Area.hpp"
 	"opencv2/highgui/highgui.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\areapreviewer.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\areapreviewer.cpp
 	"AreaPreviewer.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\controlpanel.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\controlpanel.cpp
 	"ControlPanel.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\decorator.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\decorator.cpp
 	"Decorator.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\drawingarea.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\drawingarea.cpp
 	"DrawingArea.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\featureclassifier.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\featureclassifier.cpp
 	"FeatureClassifier.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\foregroundextractor.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\foregroundextractor.cpp
 	"ForegroundExtractor.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\motionsensor.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\motionsensor.cpp
 	"MotionSensor.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\optionparser.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\optionparser.cpp
 	"OptionParser.hpp"
 	<ctype.h>
 	<stdio.h>
@@ -37,51 +37,59 @@
 	<iostream>
 	<sstream>
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageareamaker.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageareamaker.cpp
 	"PageAreaMaker.hpp"
+	"guiToolTips.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageoutput.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageoutput.cpp
 	"PageOutput.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageprocesspars.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pageprocesspars.cpp
+	"guiToolTips.hpp"
 	"PageProcessPars.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pagevideoinput.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\pagevideoinput.cpp
 	"PageVideoInput.hpp"
+	"guiToolTips.hpp"
 	<iostream>
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\processor.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\processor.cpp
 	"Processor.hpp"
 	"ROIMaker.hpp"
 	"Area.hpp"
 	"VideoWriter.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\roimaker.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\roimaker.cpp
 	"ROIMaker.hpp"
 	"opencv2/highgui/highgui.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\resultwriter.cpp
+1354215528 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\resultwriter.cpp
 	<assert.h>
 	"ResultWriter.hpp"
 	<time.h>
 
-1349185501 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\settingassistant.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\settingassistant.cpp
 	"SettingAssistant.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\tracker.cpp
+1354215241 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\tracker.cpp
 	"Tracker.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videograbber.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videograbber.cpp
 	"VideoGrabber.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videowriter.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\videowriter.cpp
 	<sstream>
 	"VideoWriter.hpp"
 
-1349175013 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\main.cpp
+1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\main.cpp
 	"OptionParser.hpp"
 	"VideoGrabber.hpp"
 	"Processor.hpp"
 	"SettingAssistant.hpp"
 	"Application.hpp"
+	"WaitingMessage.hpp"
+
+1354214431 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\waitingmessage.cpp
+	"WaitingMessage.hpp"
+	"defines.hpp"
 
