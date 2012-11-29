@@ -121,10 +121,18 @@ void ResultWriter::writeHead(){
             }
         }
 
+
+        string dateString(currentDateTime());
+
+for(int i = 0; i < dateString.length(); i++){
+    if(dateString[i] == ' ')
+        dateString[i] = '_';
+}
+
         tmpss<<"\'list("
                 <<"Global="
                     <<"c("
-                        <<"Date=\""<<currentDateTime()<<"\""
+                        <<"Date=\""<<dateString<<"\""
                         <<","
                         <<"Input=\""<<video<<"\""
                         <<","

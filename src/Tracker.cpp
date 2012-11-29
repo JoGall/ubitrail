@@ -74,9 +74,7 @@ void Tracker::preprocess(const cv::Mat& in,cv::Mat& out){
     }
 
     double sigma = (double) m_agentSize / 5;
-//    std::cout<<sigma<<std::endl;
     cv::GaussianBlur(out,out,cv::Size(0,0),sigma);
- //std::cout<<sigma<<std::endl;
 
     if(accum.empty())
         out.convertTo(accum,CV_32F);
