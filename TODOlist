@@ -93,3 +93,4 @@ Quitting mechanism
 
 BUGS:
 	@+++!+++ program not closing properly when reaching end of video
+	@++!++ GUI closes unexpectedly when using a .jpg image mask
