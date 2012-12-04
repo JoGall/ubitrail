@@ -2,7 +2,7 @@ Package: rubitrail
 Type: Package
 Title: rubitrail, a package to analyse the output of UbiTrail, an open-source
     video tracking program for analysis of animal motion.
-Version: 0.1
+Version: 1.2
 Date: 2012-10-26
 Authors@R: c(person("Quentin", "Geissmann", role = c("aut", "cre"),email =
     "qgeissmann@gmail.com"), person("Joe", "Gallagher", role = "ctb",email =
