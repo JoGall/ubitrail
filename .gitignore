@@ -32,7 +32,7 @@ ubitrail
 #data/
 html/
 latex/
-windowsBuild/
+#windowsBuild/
 *.layout
 *.layout.cbTemp
 

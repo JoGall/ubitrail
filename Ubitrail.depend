@@ -63,7 +63,7 @@
 	"ROIMaker.hpp"
 	"opencv2/highgui/highgui.hpp"
 
-1354215528 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\resultwriter.cpp
+1354645815 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\resultwriter.cpp
 	<assert.h>
 	"ResultWriter.hpp"
 	<time.h>
@@ -81,7 +81,7 @@
 	<sstream>
 	"VideoWriter.hpp"
 
-1354213733 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\main.cpp
+1354218289 source:c:\mingw\msys\1.0\home\quentin\cpp\ubitrail\src\main.cpp
 	"OptionParser.hpp"
 	"VideoGrabber.hpp"
 	"Processor.hpp"
