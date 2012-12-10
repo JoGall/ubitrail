@@ -38,7 +38,7 @@ ASSISTANT:
     @++!++ review sensitivity definition when inverted
     @+!+ include links to user manual
     @! startProcessing = better button
-    @+! estethic buttons
+    @+! aesthetic buttons
     @+! images
     @+! icon
     @+! tooltips
@@ -54,11 +54,12 @@ DISPLAY:
     @++! click on display -> area
 
     @++!++ save preview picture
-    @+! estethic buttons
+    @+! aesthetic buttons
     @+! images
     @+! icon
     @+! tooltips
     @+! have a "do not decorate" option
+    @+! change 'number of lines' to 'number of territories', and default value to 1
 
 # => @++!++ Save first picture in GUI
 # => @+! "open result folder"

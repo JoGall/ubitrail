@@ -143,13 +143,13 @@ bool OptionParser::checkOptions(){
 
     if(opts.nLinePerDishes < 0 ){
         std::cerr<<"Wrong argument for option -l"<<std::endl
-        <<"The number of line per dished must be positive!"<<std::endl;
+        <<"The number of lines per dish must be positive!"<<std::endl;
         valid = false;
     }
 
     if(opts.motionSensitivity < 0 || opts.motionSensitivity > 1000){
         std::cerr<<"Wrong argument for option -s"<<std::endl
-        <<"The motion sensitivity has to be in the 0:1000 range!"<<std::endl;
+        <<"The motion sensitivity has to be in the range 0 to 1000!"<<std::endl;
         valid = false;
     }
 
@@ -168,34 +168,34 @@ bool OptionParser::checkOptions(){
 
     if(opts.outDir == ""){
         if(opts.resultFile){
-            std::cerr<<"Wrong combinaison of arguments"<<std::endl
-            <<"Option \"-r\"(write a result file(text)) requiers option \"-o\"(output directory) to have a value "<<std::endl;
+            std::cerr<<"Wrong combination of arguments"<<std::endl
+            <<"Option \"-r\"(write a result file(text)) requires option \"-o\"(output directory) to have a value "<<std::endl;
             valid = false;
         }
         if(opts.videosOutput){
-            std::cerr<<"Wrong combinaison of arguments"<<std::endl
-            <<"Option \"-v\"(write individual videos) requiers option \"-o\"(output directory) to have a value "<<std::endl;
+            std::cerr<<"Wrong combination of arguments"<<std::endl
+            <<"Option \"-v\"(write individual videos) requires option \"-o\"(output directory) to have a value "<<std::endl;
             valid = false;
         }
         if(opts.allFrameOutput){
-            std::cerr<<"Wrong combinaison of arguments"<<std::endl
-            <<"Option \"-a\"(write global video) requiers option \"-o\"(output directory) to have a value "<<std::endl;
+            std::cerr<<"Wrong combination of arguments"<<std::endl
+            <<"Option \"-a\"(write global video) requires option \"-o\"(output directory) to have a value "<<std::endl;
             valid = false;
         }
         if(opts.writeFirstPicture){
-            std::cerr<<"Wrong combinaison of arguments"<<std::endl
-            <<"Option \"-p\"(save the first picture) requiers option \"-o\"(output directory) to have a value "<<std::endl;
+            std::cerr<<"Wrong combination of arguments"<<std::endl
+            <<"Option \"-p\"(save the first picture) requires option \"-o\"(output directory) to have a value "<<std::endl;
             valid = false;
         }
         if(opts.usesMaskForTerrit && opts.maskFile==""){
-            std::cerr<<"Wrong combinaison of arguments"<<std::endl
-            <<"Option \"-u\"(use mask file for territories) requiers option \"-m\"(path to the mask file) to be set"<<std::endl;
+            std::cerr<<"Wrong combination of arguments"<<std::endl
+            <<"Option \"-u\"(use mask file for territories) requires option \"-m\"(path to the mask file) to be set"<<std::endl;
             valid = false;
         }
     }
 
 //    if(opts.nDishes > 1 && opts.maskFile !=""){
-//         std::cerr<<"Wrong combinaison of arguments"<<std::endl
+//         std::cerr<<"Wrong combination of arguments"<<std::endl
 //        <<"Option \"-d\" is not compatible with option \"-m\" "<<std::endl;
 //        valid = false;
 //    }
