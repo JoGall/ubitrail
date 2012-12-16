@@ -1,0 +1,16 @@
+/home/quentin/Cpp/Ubitrail/headers/FeatureClassifier.hpp:85: warning: argument 'countour' of command @param is not found in the argument list of FeatureClassifier::makeFeatures(std::vector< double > &featureVec, std::vector< cv::Point > &contour, cv::Mat &miniIMG)
+/home/quentin/Cpp/Ubitrail/headers/FeatureClassifier.hpp:85: warning: The following parameters of FeatureClassifier::makeFeatures(std::vector< double > &featureVec, std::vector< cv::Point > &contour, cv::Mat &miniIMG) are not documented:
+  parameter 'contour'
+/home/quentin/Cpp/Ubitrail/headers/ForegroundExtractor.hpp:31: warning: argument 'true' of command @param is not found in the argument list of ForegroundExtractor::run(const cv::Mat &img, const cv::Mat &mot, int motionQ, bool wasAmbig, std::vector< std::vector< cv::Point > > &validContours)
+/home/quentin/Cpp/Ubitrail/headers/MotionSensor.hpp:20: warning: argument 'a' of command @param is not found in the argument list of MotionSensor::MotionSensor(int sensitivity, cv::Mat &mask)
+/home/quentin/Cpp/Ubitrail/headers/MotionSensor.hpp:20: warning: argument 'a' of command @param is not found in the argument list of MotionSensor::MotionSensor(int sensitivity, cv::Mat &mask)
+/home/quentin/Cpp/Ubitrail/headers/MotionSensor.hpp:20: warning: The following parameters of MotionSensor::MotionSensor(int sensitivity, cv::Mat &mask) are not documented:
+  parameter 'sensitivity'
+  parameter 'mask'
+/home/quentin/Cpp/Ubitrail/headers/Processor.hpp:119: warning: argument 'an' of command @param is not found in the argument list of Processor::makeLabels(std::vector< cv::Rect > newROIs)
+/home/quentin/Cpp/Ubitrail/headers/ResultWriter.hpp:32: warning: The following parameters of ResultWriter::ResultWriter(std::vector< Tracker > *trackers, Options &options, int width, int height) are not documented:
+  parameter 'width'
+  parameter 'height'
+/home/quentin/Cpp/Ubitrail/headers/ResultWriter.hpp:41: warning: argument 'the' of command @param is not found in the argument list of ResultWriter::writeTracker(int i, long time)
+/home/quentin/Cpp/Ubitrail/headers/ResultWriter.hpp:41: warning: The following parameters of ResultWriter::writeTracker(int i, long time) are not documented:
+  parameter 'time'
