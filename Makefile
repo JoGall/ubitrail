@@ -4,15 +4,17 @@ PROGRAM_NAME := '"Ubitrail"'
 WEBSITE_URI := '"http://ubitrail.sourceforge.net"'
 
 # The version
-VERSION := 1.1
+VERSION := 1.3
 
 # The minimal version for OpenCV
-MIN_OCV_VERSION := 2.3
+MIN_OCV_VERSION := 2.4
 
 # Directory structure of the project
 SOURCE_DIR := src/
 HEADERS_DIR := headers/
-SAMPLES_DIR := samples/
+PAPER_DIR := paper/
+PAPER_NAME := paper.tex
+#SAMPLES_DIR := samples/
 
 # We define the sourcefile as all the cpp file in the source directory
 SOURCES := $(shell ls $(SOURCE_DIR)*.cpp)
@@ -60,11 +62,14 @@ else
 endif
 
 
+
+figureDirs := $(ls paper |grep ^fig  | grep -v '\.')
 # We tell make to look for pre-requisites in the source directory
 vpath %.cpp  src
+#~ vpath %.tex  paper
 
 
-.PHONY: all clean  R linuxRelease install
+.PHONY: all clean  R linuxRelease install releaseAll paper
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 all : $(EXEC_NAME)
 
@@ -105,7 +110,7 @@ uninstall:
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 clean:
-	rm -f $(EXEC_NAME) *.o *.d  *.tar.gz *.out *.pdf
+	rm -f $(EXEC_NAME) *.o *.d  *.tar.gz *.out *.pdf *.aux *.log
 
 #I~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -160,3 +165,8 @@ releaseAll: $(R_TGZ) $(LINUX_TARBALL)
 	@echo "uploading $(R_TGZ)"
 	rsync -avP -e ssh $(R_TGZ) $(R_PDF) quentelery,ubitrail@frs.sourceforge.net:/home/frs/project/u/ub/ubitrail/R
 #	make clean
+
+
+paper: $(PAPER_DIR)$(PAPER_NAME)
+	pdflatex $(PAPER_DIR)$(PAPER_NAME)
+	
