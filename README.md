@@ -24,6 +24,6 @@ Tracking video during analysis a setup consisting a 12-well plate, with each wel
 ###Sample outputs
 
 ####Heatmap
-A sample heatmap from a video using the experimental design above with 6 Petri dishes. (Yellow shows areas visited most frequently and blue less frequently.)
+A sample heatmap from an experimental design with 6 areas, overlaid onto a frame taken from the video. Yellow shows areas visited most frequently, blue less frequently.
 
 <img src = "https://sourceforge.net/p/ubitrail/screenshot/heatmap.png" alt = "heatmap" width = "640" />
